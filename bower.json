@@ -1,0 +1,28 @@
+{
+  "name": "cnp-foundation-theme",
+  "description": "CNP's starter WordPress theme, integrated with the Foundation framework.",
+  "main": [
+    "js/pre/site.js",
+    "css/pre/styles.scss"
+  ],
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "slick": "kenwheeler/slick"
+/*    "cnp-print-on-present": "Clark-Nikdel-Powell/Module-WP-Print-on-Present",
+    "cnp-nav-menu-filters": "Clark-Nikdel-Powell/Module-WP-Nav-Filters",
+    "cnp-subnav": "Clark-Nikdel-Powell/Module-WP-Subnav",
+    "cnp-acf-modules": "Clark-Nikdel-Powell/Module-WP-ACF-Flex-Content-Modules"*/
+  },
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true
+}

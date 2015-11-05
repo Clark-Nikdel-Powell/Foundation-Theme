@@ -1,0 +1,31 @@
+{
+  "name": "cnp-foundation-theme",
+  "version": "0.1.0",
+  "description": "CNP's starter WordPress theme, integrated with the Foundation framework.",
+  "author": "CNP <wordpress@clarknikdelpowell.com>",
+  "scripts": {},
+  "main": "js/pre/site.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clark-Nikdel-Powell/Foundation-Theme"
+  },
+  "bugs": {
+    "url": "https://github.com/Clark-Nikdel-Powell/Foundation-Theme/issues"
+  },
+  "keywords": [
+    "wordpress",
+    "foundation"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-uglify": "^1.4.2",
+    "streamqueue": "^1.1.1"
+  },
+  "private": true,
+  "license": "MIT"
+}
