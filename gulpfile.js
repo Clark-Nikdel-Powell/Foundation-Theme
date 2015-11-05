@@ -28,12 +28,12 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('build-scripts', function() {
     return streamqueue({ objectMode: true },
       gulp.src('./bower_components/foundation/js/foundation.js'),
-      gulp.src('./js/pre/**/*.js')
+      gulp.src('./assets/js/pre/**/*.js')
     )
     .pipe(concat('site.min.js'))
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('./assets/js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('./assets/js'))
     .pipe(browserSync.stream());
 });
 
@@ -49,13 +49,13 @@ gulp.task('build-scripts', function() {
  * @since 0.1.0
  */
 gulp.task('build-styles', function() {
-  gulp.src('./css/pre/styles.scss')
+  gulp.src('./assets/css/pre/styles.scss')
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./assets/css'))
     .pipe(browserSync.stream());
 });
 
