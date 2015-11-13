@@ -1,0 +1,11 @@
+.module-gallery {
+
+	&-list.row {
+		margin-left: auto;
+
+		&.clearing-thumbs li {
+			margin-right: 0;
+		}
+	}
+
+}

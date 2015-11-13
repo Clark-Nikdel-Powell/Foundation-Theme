@@ -1,6 +1,8 @@
 <header class="section">
 	<div class="row">
-		<h2><?php echo $post->post_title; ?></h2>
+		<div class="columns">
+			<h2><?php echo $post->post_title; ?></h2>
+		</div>
 	</div>
 </header>
 

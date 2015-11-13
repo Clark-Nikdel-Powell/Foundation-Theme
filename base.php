@@ -8,7 +8,7 @@
 				get_template_part( 'partials/header' );
 			?>
 			<div class="wrapper" role="document">
-				<div class="main row">
+				<div class="main">
 					<div class="content">
 						<?php include_once( cnp_template_path() ); ?>
 					</div><!-- /.content -->

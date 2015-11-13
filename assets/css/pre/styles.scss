@@ -52,6 +52,24 @@ or import them on a component basis. */
 // @import '../../../bower_components/foundation/scss/foundation/components/visibility';
 
 /*——————————————————————————————————————————
+/  Slick
+——————————————————————————————————————————*/
+
+@import '../../../bower_components/slick/slick/slick.scss';
+
+/*——————————————————————————————————————————
+/  Modules
+——————————————————————————————————————————*/
+
+@import 'modules/blurbs';
+@import 'modules/gallery';
+@import 'modules/header';
+@import 'modules/map';
+@import 'modules/posts_list';
+@import 'modules/slideshow';
+@import 'modules/tabs';
+
+/*——————————————————————————————————————————
 /  Partials
 ——————————————————————————————————————————*/
 
@@ -63,4 +81,5 @@ or import them on a component basis. */
 /  Layouts
 ——————————————————————————————————————————*/
 
+@import 'layouts/base';
 @import 'layouts/front-page';

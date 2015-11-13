@@ -1,15 +1,26 @@
-<header class="masthead row" role="banner">
+<header class="masthead contain-to-grid" role="banner">
 
-    <div class="small-3 columns">
-        <h2 class="logo">
-            <a itemprop="url" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-            <meta itemprop="logo" content="<?php echo get_template_directory_uri() . '/img/logo.svg'; ?>">
-        </h2>
-    </div>
+<nav class="top-bar" data-topbar role="navigation">
 
-    <div class="small-9 columns">
-        <?php wp_nav_menu( array('menu' => 'Main') ); ?>
-    </div>
+	<ul class="title-area">
+		<li class="name">
+			<h2 class="logo">
+				<a itemprop="url" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+
+			</h2>
+		</li>
+		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	</ul>
+
+	<section class="top-bar-section">
+
+		<div class="right">
+			<?php wp_nav_menu( array('menu' => 'Main') ); ?>
+		</div>
+
+	</section>
+
+</nav>
 
 </header><?php
 if ( is_front_page() ) {
