@@ -1,0 +1,136 @@
+/*——————————————————————————————————————————————————————————————————————————————
+/  Fonts
+——————————————————————————————————————————————————————————————————————————————*/
+
+%f_header {
+  font-family: "futura-pt", serif;
+}
+$fw_b_header: 900;
+$fw_n_header: 400;
+%f_body {
+  font-family: "Helvetica", Arial, sans-serif;
+}
+$fw_b_body: 700;
+$fw_n_body: 400;
+
+%font_smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  Variables
+——————————————————————————————————————————————————————————————————————————————*/
+
+/*——————————————————————————————————————————————————————————
+/  Colors
+——————————————————————————————————————————————————————————*/
+
+$light_blue: #b8ebff;
+//$dark_blue: #1f4b75;
+$dark_blue: #0f4876;
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  Functions & Extensions
+——————————————————————————————————————————————————————————————————————————————*/
+
+@function scoped-emcalc( $scoped_unit, $base_unit ) {
+  @return ( strip-unit( rem-calc( $scoped_unit, $base_unit ) ) * 1em );
+}
+
+%flex_row {
+  display: flex;
+
+  &:before, &:after {
+	display: none;
+  }
+}
+
+@mixin button_styles($bg_color, $bd_color) {
+  background-color: $bg_color;
+  border-bottom: 3px solid $bd_color;
+  border-radius: 3px;
+}
+
+@mixin accent_border($border_top_color, $border_bottom_color, $bottom_position) {
+
+  position: relative;
+
+  &:after {
+	display: block;
+	width: 100%;
+	content: '';
+	position: absolute;
+	bottom: $bottom_position;
+	left: 0;
+	border-top: 1px solid $border_top_color;
+	border-bottom: 1px solid $border_bottom_color;
+  }
+
+}
+
+@mixin pseudo_triangle($color, $size, $direction, $ratio:1, $include_defaults:'true') {
+  border-width: $size;
+
+  @if $include_defaults == 'true' {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	border-style: solid;
+	border-color: transparent;
+  }
+
+  @if $direction == 'up' {
+	border-bottom-color: $color;
+	border-bottom-width: ($size * $ratio);
+  }
+
+  @if $direction == 'down' {
+	border-top-color: $color;
+	border-top-width: ($size * $ratio);
+  }
+
+  @if $direction == 'right' {
+	border-left-color: $color;
+	border-left-width: ($size * $ratio);
+  }
+
+  @if $direction == 'left' {
+	border-right-color: $color;
+	border-right-width: ($size * $ratio);
+  }
+}
+
+@mixin caret_link() {
+  color: $dark_blue;
+  font-weight: $fw_b_header;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  .icon {
+	color: $body-font-color;
+	font-size: -zf-bp-to-em(14);
+  }
+  .text {
+	position: relative;
+
+	&:after {
+	  display: inline-block;
+	  width: 100%;
+	  content: '';
+	  position: absolute;
+	  left: 0;
+	  bottom: -1px;
+	  border-top: 1px solid $dark_blue;
+	}
+  }
+  &:hover {
+
+	.text:after {
+	  border-color: transparent;
+	}
+  }
+}

@@ -1,10 +1,10 @@
 /*——————————————————————————————————————————————————————————
-/  Plugins
-——————————————————————————————————————————————————————————*/
+ /  Plugins
+ ——————————————————————————————————————————————————————————*/
 
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
 
+var browserSync = require('browser-sync').create();
 var streamqueue = require('streamqueue');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -12,8 +12,8 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
 /*——————————————————————————————————————————————————————————
-/  Commands
-——————————————————————————————————————————————————————————*/
+ /  Commands
+ ——————————————————————————————————————————————————————————*/
 
 /**
  * @summary Build Scripts.
@@ -27,18 +27,19 @@ var autoprefixer = require('gulp-autoprefixer');
  */
 gulp.task('build-scripts', function() {
     return streamqueue({ objectMode: true },
-      gulp.src('./bower_components/modernizr/modernizr.js'),
-      gulp.src('./bower_components/foundation/js/foundation.js'),
-      gulp.src('./bower_components/foundation/js/foundation/foundation.tab.js'),
-      gulp.src('./bower_components/foundation/js/foundation/foundation.clearing.js'),
-      gulp.src('./bower_components/slick/slick/slick.js'),
-      gulp.src('./assets/js/pre/**/*.js')
+        gulp.src('./node_modules/foundation-sites/dist/foundation.js'),
+        //gulp.src('./node_modules/foundation-sites/js/foundation.core.js'),
+        //gulp.src('./node_modules/foundation-sites/js/foundation.util.mediaQuery.js'),
+        //gulp.src('./node_modules/foundation-sites/js/foundation.tabs.js'),
+        //gulp.src('./node_modules/foundation-sites/js/foundation.util.keyboard.js'),
+        //gulp.src('./node_modules/foundation-sites/js/foundation.util.timerAndImageLoader.js'),
+        gulp.src('./assets/js/pre/**/*.js')
     )
-    .pipe(concat('site.min.js'))
-    .pipe(gulp.dest('./assets/js'))
-    //.pipe(uglify())
-    //.pipe(gulp.dest('./assets/js'))
-    .pipe(browserSync.stream());
+        .pipe(concat('site.min.js'))
+        .pipe(gulp.dest('./assets/js'))
+        //.pipe(uglify())
+        //.pipe(gulp.dest('./assets/js'))
+        .pipe(browserSync.stream());
 });
 
 /**
@@ -53,14 +54,14 @@ gulp.task('build-scripts', function() {
  * @since 0.1.0
  */
 gulp.task('build-styles', function() {
-  gulp.src('./assets/css/pre/styles.scss')
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(gulp.dest('./assets/css'))
-    .pipe(browserSync.stream());
+    gulp.src('./assets/css/pre/styles.scss')
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('./assets/css'))
+        .pipe(browserSync.stream());
 });
 
 /**
@@ -75,26 +76,13 @@ gulp.task('build-styles', function() {
  *
  * @param proxy The local site domain.
  */
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        proxy: "foundation.dev"
-    });
-});
+gulp.task('watch', function() {
 
-/**
- * @summary Automate.
- *
- * Watches for changes in the theme CSS & JS directories,
- * and compiles styles and scripts based on what changed.
- *
- * Runs on gulp 'automate' and 'browser-sync'
- *
- * @since 0.1.0
- */
-gulp.task('automate', function() {
+    browserSync.init({
+        proxy: "http://localhost:3000"
+    });
+
     gulp.watch(['assets/css/**/*.scss'], ['build-styles']);
     gulp.watch(['assets/js/**/*.js'], ['build-scripts']);
-    gulp.watch('*.php').on('change', browserSync.reload);
+    gulp.watch("*.php").on('change', browserSync.reload);
 });
-
-gulp.task('default', ['build-scripts', 'build-styles']);
