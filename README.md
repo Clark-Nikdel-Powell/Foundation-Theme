@@ -76,7 +76,9 @@
 
 <p>Please do not modify anything in the Composer directory directly. If you need different output, open up an issue on the module's Github repo.</p>
 
-<h3 class="subheader">File Structure</h3>
+<h3 class="subheader">File &amp; Folder Structure</h3>
+
+<h4>Folders</h4>
 
 <ol>
 	<li><strong>Assets</strong>: Contains css, js, img, and fonts directories.</li>
@@ -85,6 +87,12 @@
 	<li><strong>Modules</strong>: Page components that can be used more than once per page, as well as site-wide <em>(slideshow, post-list, gallery, map etc.)</em>. Generic modules will be installed via Composer, but local modules (modules that are too specific to warrant breaking out in to their own repo) live here.</li>
 	<li><strong>Partials</strong>: Page components that are used only once per page <em>(head, header, nav-breadcrumbs, sectionheader, etc.)</em>.</li>
 </ol>
+
+<h4>Files</h4>
+
+Pages can be assembled from a layout file or from a combination of partial, module and content files.
+
+Any WordPress layout files, like `front-page.php`, `archive-$name.php`, `single-$name.php`, etc. belong in the root directory. Styles for these layouts belong in `assets/css/pre/layouts`.
 
 <h3 class="subheader">What is this Foundation?</h3>
 
