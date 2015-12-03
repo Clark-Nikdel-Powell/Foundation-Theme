@@ -1,7 +1,5 @@
 <h2>New Foundation Project <small>Let&rsquo;s get started</small></h2>
 
-<p>You can find the <a href="http://docs.cnp.io/docs/foundation-theme">docs for this theme</a> on the <a href="http://docs.cnp.io">CNP Dev Team Docs site</a>. But since you're already here, here are a few tips:</p>
-
 <h3 class="subheader">Quick-Start</h3>
 <ol>
 	<li>Copy the repo files into your theme directory.</li>
@@ -11,7 +9,7 @@
 	<li>See the Gulp section to link your gems into the project.</li>
 </ol>
 
-<p>If you're using VVV (you are right?), update the <code>proxy</code> on <code>line 82</code> in gulpfile.js to use your local development url.</p>
+<p>If you're using VVV, update the <code>proxy</code> on <code>line 82</code> in gulpfile.js to use your local development url.</p>
 
 <p>This should take care of everything you need to get started.</p>
 
@@ -74,9 +72,19 @@
 
 <h3 class="subheader">Composer Libraries</h3>
 
-<p>Front-end modules are located in 'lib/'. This includes a number of CNP-built PHP modules, which are in turn included in 'functions.php' via Composer's upload.</p>
+<p>Front-end PHP modules are located in 'lib/'. This includes a number of CNP-built PHP modules, which are in turn included in 'functions.php' via Composer's autoload.</p>
 
 <p>Please do not modify anything in the Composer directory directly. If you need different output, open up an issue on the module's Github repo.</p>
+
+<h3 class="subheader">File Structure</h3>
+
+<ol>
+	<li><strong>Assets</strong>: Contains css, js, img, and fonts directories.</li>
+	<li><strong>Content</strong>: Files that display content from the editor for various post types <em>(content-search, content-news, etc.)</em>.</li>
+	<li><strong>Functions</strong>: </li>
+	<li><strong>Modules</strong>: Page components that can be used more than once per page, as well as site-wide <em>(slideshow, post-list, gallery, map etc.)</em>. Generic modules will be installed via Composer, but local modules (modules that are too specific to warrant breaking out in to their own repo) live here.</li>
+	<li><strong>Partials</strong>: Page components that are used only once per page <em>(head, header, nav-breadcrumbs, sectionheader, etc.)</em>.</li>
+</ol>
 
 <h3 class="subheader">What is this Foundation?</h3>
 
