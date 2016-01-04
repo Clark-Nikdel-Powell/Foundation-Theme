@@ -49,14 +49,16 @@ Link your globally installed gems into the theme directory as follows:
 
 `npm link <package-name>`
 
+or copy/paste this into the Terminal to run all of them at once:
+
 ```
 npm link gulp
 npm link browser-sync
 npm link streamqueue
 npm link gulp-concat
 npm link gulp-uglify
-npm link gulp-sass
 npm link gulp-autoprefixer
+npm link gulp-sass
 ```
 
 #### Gulp Tasks
