@@ -1,100 +1,98 @@
-<h2>New Foundation Project <small>Let&rsquo;s get started</small></h2>
+## New Foundation Project <small>Let’s get started</small>
 
-<h3 class="subheader">Quick-Start</h3>
-<ol>
-	<li>Copy the repo files into your theme directory.</li>
-	<li>In Terminal, <code>cd</code> into the theme directory.</li>
-	<li>Run <code>npm install</code>.</li>
-	<li>Run <code>composer install</code>.</li>
-	<li>See the Gulp section to link your gems into the project.</li>
-</ol>
+### Quick-Start
 
-<p>If you're using VVV, update the <code>proxy</code> on <code>line 82</code> in gulpfile.js to use your local development url.</p>
+1.  Copy the repo files into your theme directory.
+2.  In Terminal, `cd` into the theme directory.
+3.  Run `npm install`.
+4.  Run `composer install`.
+5.  See the Gulp section to link your gems into the project.
 
-<p>This should take care of everything you need to get started.</p>
+If you're using VVV, update the `proxy` on `line 82` in gulpfile.js to use your local development url.
 
-<h3 class="subheader">Settings</h3>
+This should take care of everything you need to get started.
 
-<ol>
-	<li>PHP Settings are located in 'functions/setup.php'.</li>
-	<li>CSS Settings are located in 'assets/css/pre/_site-settings.scss'.</li>
-	<li>CSS Imports are handled in 'assets/css/pre/styles.scss'.</li>
-</ol>
+### Settings
 
-<h2>What's Included</h2>
+1.  PHP Settings are located in 'functions/setup.php'.
+2.  CSS Settings are located in 'assets/css/pre/_site-settings.scss'.
+3.  CSS Imports are handled in 'assets/css/pre/styles.scss'.
 
-<h3>via package.json</h3>
-<ul>
-	<li>Foundation v6</li>
-	<li>Slick Carousel</li>
-</ul>
+## What's Included
 
-<h3>via Composer</h3>
-<ul>
-	<li>Module-WP-ACF-Flex-Content-Modules</li>
-	<li>Module-WP-Print-on-Present</li>
-	<li>Module-WP-Highest-Ancestor</li>
-	<li>Module-WP-Subnav</li>
-	<li>Module-WP-Nav-Filters</li>
-</ul>
+### via package.json
 
-<h3>Gulp</h3>
+*   Foundation v6
+*   Slick Carousel
 
-<p>The included gulp file and package.json assumes you have the following gems installed globally.</p>
-<ul>
-	<li>gulp</li>
-	<li>browser-sync</li>
-	<li>streamqueue</li>
-	<li>gulp-concat</li>
-	<li>gulp-uglify</li>
-	<li>gulp-sass</li>
-	<li>gulp-autoprefixer</li>
-</ul>
+### via Composer
 
-<p>Link your globally installed gems into the theme directory as follows:</p>
+*   Module-WP-ACF-Flex-Content-Modules
+*   Module-WP-Print-on-Present
+*   Module-WP-Highest-Ancestor
+*   Module-WP-Subnav
+*   Module-WP-Nav-Filters
 
-<p><code>npm link &lt;package-name&gt;</code></p>
+### Gulp
 
-<h4>Gulp Tasks</h4>
-<ul>
-	<li><code>gulp watch</code>: CSS and JS compilation and browser sync.</li>
-	<li><code>gulp build-styles</code>: compile CSS.</li>
-	<li><code>gulp build-scripts</code>: compile JS.</li>
-</ul>
+The included gulp file and package.json assumes you have the following gems installed globally.
 
-<h2>How This Theme Works</h2>
+*   gulp
+*   browser-sync
+*   streamqueue
+*   gulp-concat
+*   gulp-uglify
+*   gulp-sass
+*   gulp-autoprefixer
 
-<h3 class="subheader">Base.php</h3>
+Link your globally installed gems into the theme directory as follows:
 
-<p>This theme uses a file called <code>base.php</code> that serves as a wrapper for all theme layout files: e.g., <code>index.php</code>, <code>front-page.php</code>, <code>archive-$post_type.php</code>, etc. This means you'll never need to call <code>get_header()</code> or <code>get_footer()</code>, and that div elements that normally open and close in the header and footer files are safely contained inside base.php.</p>
+`npm link <package-name>`
 
-<p>If you need to add a secondary header or footer, use <code>get_template_part()</code>, or else WordPress will throw a PHP warning.</p>
+```
+npm link gulp
+npm link browser-sync
+npm link streamqueue
+npm link gulp-concat
+npm link gulp-uglify
+npm link gulp-sass
+npm link gulp-autoprefixer
+```
 
-<h3 class="subheader">Composer Libraries</h3>
+#### Gulp Tasks
 
-<p>Front-end PHP modules are located in 'lib/'. This includes a number of CNP-built PHP modules, which are in turn included in 'functions.php' via Composer's autoload.</p>
+*   `gulp watch`: CSS and JS compilation and browser sync.
+*   `gulp build-styles`: compile CSS.
+*   `gulp build-scripts`: compile JS.
 
-<p>Please do not modify anything in the Composer directory directly. If you need different output, open up an issue on the module's Github repo.</p>
+## How This Theme Works
 
-<h3 class="subheader">File &amp; Folder Structure</h3>
+### Base.php
 
-<h4>Folders</h4>
+This theme uses a file called `base.php` that serves as a wrapper for all theme layout files: e.g., `index.php`, `front-page.php`, `archive-$post_type.php`, etc. This means you'll never need to call `get_header()` or `get_footer()`, and that div elements that normally open and close in the header and footer files are safely contained inside base.php.
 
-<ol>
-	<li><strong>Assets</strong>: Contains css, js, img, and fonts directories.</li>
-	<li><strong>Content</strong>: Files that display content from the editor for various post types <em>(content-search, content-news, etc.)</em>.</li>
-	<li><strong>Functions</strong>: </li>
-	<li><strong>Modules</strong>: Page components that can be used more than once per page, as well as site-wide <em>(slideshow, post-list, gallery, map etc.)</em>. Generic modules will be installed via Composer, but local modules (modules that are too specific to warrant breaking out in to their own repo) live here.</li>
-	<li><strong>Partials</strong>: Page components that are used only once per page <em>(head, header, nav-breadcrumbs, sectionheader, etc.)</em>.</li>
-</ol>
+If you need to add a secondary header or footer, use `get_template_part()`, or else WordPress will throw a PHP warning.
 
-<h4>Files</h4>
+### Composer Libraries
 
-Pages can be assembled from a layout file or from a combination of partial, module and content files.
+Front-end PHP modules are located in 'lib/'. This includes a number of CNP-built PHP modules, which are in turn included in 'functions.php' via Composer's autoload.
 
-Any WordPress layout files, like `front-page.php`, `archive-$name.php`, `single-$name.php`, etc. belong in the root directory. Styles for these layouts belong in `assets/css/pre/layouts`.
+Please do not modify anything in the Composer directory directly. If you need different output, open up an issue on the module's Github repo.
 
-<h3 class="subheader">What is this Foundation?</h3>
+### File & Folder Structure
 
-<p>Last but not least, this theme is built on the <a href="http://foundation.zurb.com/docs" target="_blank">Zurb Foundation Framework</a>. Check out their docs for assistance while you're writing the front-end code for the site.</p>
+#### Folders
 
+1.  **Assets**: Contains css, js, img, and fonts directories.
+2.  **Content**: Files that display content from the editor for various post types _(content-search, content-news, etc.)_.
+3.  **Functions**:
+4.  **Modules**: Page components that can be used more than once per page, as well as site-wide _(slideshow, post-list, gallery, map etc.)_. Generic modules will be installed via Composer, but local modules (modules that are too specific to warrant breaking out in to their own repo) live here.
+5.  **Partials**: Page components that are used only once per page _(head, header, nav-breadcrumbs, sectionheader, etc.)_.
+
+#### Files
+
+Pages can be assembled from a layout file or from a combination of partial, module and content files. Any WordPress layout files, like `front-page.php`, `archive-$name.php`, `single-$name.php`, etc. belong in the root directory. Styles for these layouts belong in `assets/css/pre/layouts`.
+
+### What is this Foundation?
+
+Last but not least, this theme is built on the [Zurb Foundation Framework](http://foundation.zurb.com/docs). Check out their docs for assistance while you're writing the front-end code for the site.
