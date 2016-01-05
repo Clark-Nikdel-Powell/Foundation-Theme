@@ -1,6 +1,6 @@
 {
   "name": "cnp-foundation-theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CNP's starter WordPress theme, integrated with the Foundation framework.",
   "author": "CNP <wordpress@clarknikdelpowell.com>",
   "scripts": {},
@@ -19,7 +19,9 @@
   "dependencies": {},
   "devDependencies": {
     "foundation-sites": "^6.0",
-    "slick-carousel": "kenwheeler/slick"
+    "slick-carousel": "kenwheeler/slick",
+    "scut": "davidtheclark/scut",
+    "cnp-scss-snippets": "^0.1"
   },
   "private": true,
   "license": "MIT"
