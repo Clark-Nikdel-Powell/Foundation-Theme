@@ -4,9 +4,9 @@ add_action('wp_enqueue_scripts', function(){
 	// Register Scripts
 	wp_register_script( 'cnp-site', get_template_directory_uri() . '/assets/js/site.min.js', array('jquery'), false, true );
 	wp_register_script( 'google-maps', '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), false, true );
-	/* @TODO: decide whether this is a good idea or not.
-	wp_register_script( 'cnp-foundation-tabs', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.tab.js', array('cnp-site'), false, true );
-	*/
+
+	wp_register_script( 'cnp-foundation-tabs', get_template_directory_uri() . '/node_modules/foundation-sites/js/foundation.tabs.js', array('cnp-site'), false, true );
+
 
 	// Enqueue Scripts
 	wp_enqueue_script( 'cnp-site' );
