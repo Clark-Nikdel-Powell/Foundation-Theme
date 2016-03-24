@@ -1,22 +1,35 @@
 <?php
-// Content is based on post type or scenario partial files.
-// E.g., content-tz_event.php for a singular event, or content-404.php
-// for 404 page content.
-$type = $post->post_type;
+/**
+ * Documentation: https://github.com/Clark-Nikdel-Powell/Foundation-Theme/wiki/Index.php
+ */
 
-if ( is_search() ) {
-	$type = 'search';
+do_action( 'cnp_before_index' );
+do_action( cnp_get_action( 'before_index' ) );
+
+if ( have_posts() ) {
+
+	do_action( 'cnp_before_loop' );
+	do_action( cnp_get_action( 'before_loop' ) );
+
+	while ( have_posts() ) {
+
+		the_post();
+
+		do_action( 'cnp_before_content' );
+		do_action( cnp_get_action( 'before_content' ) );
+
+		locate_template( cnp_get_content_template_array(), true, false );
+
+		do_action( cnp_get_action( 'after_content' ) );
+		do_action( 'cnp_after_content' );
+	}
+
+	do_action( cnp_get_action( 'after_loop' ) );
+	do_action( 'cnp_after_loop' );
+
+	// TODO: move this to cnp_after_loop
+	the_posts_pagination( [ 'prev_text' => 'Prev' ] );
 }
-if ( is_404() ) {
-	$type = '404';
-}
 
-if ( have_posts() ) { while ( have_posts() ) { the_post(); ?>
-
-	<article <?php post_class(); ?>>
-		<div class="editor-content">
-			<?php get_template_part('content/content', $type); ?>
-		</div>
-	</article>
-
-<?php } the_posts_pagination(); }
+do_action( cnp_get_action( 'after_index' ) );
+do_action( 'cnp_after_index' );

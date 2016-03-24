@@ -3,14 +3,11 @@
         "vendor-dir": "lib"
     },
     "require": {
-        "cnp/wp-acf-flex-content": "0.*",
         "cnp/wp-print-on-present": "0.*",
         "cnp/wp-highest-ancestor": "0.*",
-        "cnp/wp-subnav": "0.*",
         "cnp/wp-nav-filters": "0.*",
         "cnp/wp-queried-object-parser": "0.*",
-        "cnp/cnp-haversine": "0.*",
         "cnp/wp-atom-builder": "0.*",
-        "cnp/wp-molecule-builder": "0.*"
+        "cnp/pattern-library": "0.*"
     }
 }

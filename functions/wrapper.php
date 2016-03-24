@@ -35,6 +35,7 @@ function cnp_template_selection( $wordpress_template ) {
 		array_unshift( $templates, sprintf( $str . '-%s.php', $base ) );
 	}
 
+	// TODO Need to document this filter once I remember what it does.
 	$templates = apply_filters( 'cnp_wrap_' . $slug, $templates );
 
 	return locate_template($templates);

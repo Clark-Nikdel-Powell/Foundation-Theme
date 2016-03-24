@@ -1,4 +1,9 @@
 <?php
+/**
+ * Enqueues.php is intended for enqueuing CSS & JavaScript files.
+ * Documentation: https://github.com/Clark-Nikdel-Powell/Foundation-Theme/wiki/Files 
+ */
+
 add_action('wp_enqueue_scripts', function(){
 
 	// Register Scripts
