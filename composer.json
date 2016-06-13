@@ -3,7 +3,7 @@
         "vendor-dir": "lib"
     },
     "require": {
-        "cnp/wp-print-on-present": "0.*",
+        "cnp/php-utilities": "0.*",
         "cnp/wp-highest-ancestor": "0.*",
         "cnp/wp-nav-filters": "0.*",
         "cnp/wp-queried-object-parser": "0.*",

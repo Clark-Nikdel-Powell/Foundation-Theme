@@ -21,7 +21,14 @@
     "foundation-sites": "^6.0",
     "slick-carousel": "kenwheeler/slick",
     "scut": "davidtheclark/scut",
-    "cnp-scss-snippets": "^0.1"
+    "gulp": "*",
+    "browser-sync": "*",
+    "streamqueue": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-sass": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-combine-mq": "*",
   },
   "private": true,
   "license": "MIT"
