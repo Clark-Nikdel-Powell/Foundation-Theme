@@ -1,5 +1,4 @@
 <?php
-
 /**
  * cnp_template_selection
  *
@@ -13,6 +12,7 @@
  * Adapted from Roots' "Sage" theme.
  *
  * @param string $wordpress_template The template that WordPress selects.
+ *
  * @return array $templates The templates array.
  **/
 function cnp_template_selection( $wordpress_template ) {
@@ -20,28 +20,28 @@ function cnp_template_selection( $wordpress_template ) {
 	global $main_template;
 	$main_template = $wordpress_template;
 
-	$base = basename($wordpress_template, '.php');
+	$base = basename( $wordpress_template, '.php' );
 
 	if ( 'index' === $base ) {
-		$base = FALSE;
+		$base = false;
 	}
 
-	$template = 'base.php';
-	$slug = $base;
-	$templates = array($template);
+	$template  = 'base.php';
+	$slug      = $base;
+	$templates = array( $template );
 
-	if ( FALSE !== $base ) {
-		$str = substr( $template, 0, -4 );
+	if ( false !== $base ) {
+		$str = substr( $template, 0, - 4 );
 		array_unshift( $templates, sprintf( $str . '-%s.php', $base ) );
 	}
+	
+	$filter_name = 'cnp_wrap_' . $slug;
+	$templates = apply_filters( $filter_name, $templates );
 
-	// TODO Need to document this filter once I remember what it does.
-	$templates = apply_filters( 'cnp_wrap_' . $slug, $templates );
-
-	return locate_template($templates);
-
+	return locate_template( $templates );
 }
-add_filter('template_include', 'cnp_template_selection', 99, 1);
+
+add_filter( 'template_include', 'cnp_template_selection', 20, 1 );
 
 /**
  * cnp_template_path
@@ -51,6 +51,6 @@ add_filter('template_include', 'cnp_template_selection', 99, 1);
 function cnp_template_path() {
 
 	global $main_template;
-	return $main_template;
 
+	return $main_template;
 }

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * cnp_get_content_template_array.
  *
@@ -37,11 +36,17 @@ function cnp_get_content_template_array() {
 		$content_dir . 'content.php'
 	];
 
+	$post_type = '';
+
 	if ( is_archive() || is_home() || is_search() ) {
 		array_unshift( $templates, $content_dir . 'content-archive.php' );
 	}
 	if ( is_singular() ) {
 		array_unshift( $templates, $content_dir . 'content-singular.php' );
+	}
+	if ( is_404() ) {
+		$post_type = '404';
+		array_unshift( $templates, $content_dir . '404.php' );
 	}
 
 	if ( ! empty ( $post ) ) {
@@ -54,7 +59,7 @@ function cnp_get_content_template_array() {
 		array_unshift( $templates, $post_type_path_default );
 
 		// is_archive() covers post type AND taxonomy archives. The post content will be loaded for both.
-		if ( is_archive() ) {
+		if ( is_archive() || is_home() ) {
 			$post_type_path_archive = $content_dir . $post_type . '-archive.php';
 
 			// Prepends to array, doesn't return a variable.
@@ -88,8 +93,9 @@ function cnp_get_content_template_array() {
 	 *
 	 * @param array $templates The array of templates.
 	 */
-	$templates = apply_filters( 'cnp_get_' . $post_type . '_template_array', $templates );
+	if ( '' !== $post_type ) {
+		$templates = apply_filters( 'cnp_get_' . $post_type . '_template_array', $templates );
+	}
 
 	return $templates;
-
 }

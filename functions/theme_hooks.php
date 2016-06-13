@@ -1,5 +1,4 @@
 <?php
-
 /**
  * cnp_get_action_suffix.
  *
@@ -32,11 +31,19 @@ function cnp_get_action_suffix() {
 			$action_suffix .= '-'.$view;
 		}
 	}
+	if ( is_front_page() ) {
+		$action_suffix = 'front-page';
+	}
 
 	return $action_suffix;
 }
 
+
 /**
+ * cnp_get_action
+ *
+ * Builds a namespaced action name based on a general prefix and specific suffix.
+ *
  * @param $action_prefix
  *
  * @return string
