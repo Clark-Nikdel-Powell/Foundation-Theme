@@ -72,6 +72,10 @@ function cnp_get_content_template_array() {
 			array_unshift( $templates, $post_type_path_singular );
 		}
 	}
+	if ( is_front_page() ) {
+		$post_type = 'front-page';
+		array_unshift( $templates, $content_dir . 'front-page.php' );
+	}
 
 	/**
 	 * cnp_get_content_template_array.

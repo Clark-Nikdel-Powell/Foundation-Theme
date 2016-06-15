@@ -26,9 +26,7 @@ if ( have_posts() ) {
 
 	do_action( cnp_get_action( 'after_loop' ) );
 	do_action( 'cnp_after_loop' );
-
-	// TODO: move this to cnp_after_loop
-	the_posts_pagination( [ 'prev_text' => 'Prev' ] );
+	
 }
 
 do_action( cnp_get_action( 'after_index' ) );
