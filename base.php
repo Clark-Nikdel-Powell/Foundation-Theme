@@ -11,7 +11,7 @@ do_action( cnp_get_action( 'after_header' ) );
 			do_action( cnp_get_action( 'before_content_div' ) );
 			?>
 			<div <?php
-			cnp_content_class();
+			CNP\Utility::echo_classes( 'content', 'cnp_content_div' );
 			?>><?php
 				include_once( cnp_template_path() );
 				?></div><!-- /.content -->
