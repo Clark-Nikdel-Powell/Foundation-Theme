@@ -36,6 +36,7 @@ require_once get_template_directory() . '/functions/function_content_class.php';
 require_once get_template_directory() . '/functions/filter_wp_title.php';
 require_once get_template_directory() . '/functions/filter_screen_reader_class.php';
 require_once get_template_directory() . '/functions/filter_add_acf_organisms_to_content.php';
+require_once get_template_directory() . '/functions/filter-add-icons-to-social-nav.php';
 
 // Patterns
 

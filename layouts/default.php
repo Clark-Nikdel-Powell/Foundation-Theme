@@ -9,21 +9,20 @@ namespace CLIENT_NAMESPACE;
  */
 class LayoutDefault {
 
-	public function __construct() {
+	public static function init() {
 
-		add_action( 'wp', function () {
-			$this->hook_wordpress();
+		add_action( 'wp_head', function () {
+			self::hook_wordpress();
 		} );
 	}
 
-	public function hook_wordpress() {
-		add_filter( 'body_class', [ $this, 'body_class' ], 20, 1 );
+	public static function hook_wordpress() {
+		add_filter( 'body_class', [ __CLASS__, 'body_class' ], 20, 1 );
 	}
 
-	public function body_class( $classes ) {
+	public static function body_class( $classes ) {
 
 		global $post;
-		
 		if ( is_singular() ) {
 			$classes[] = $post->post_name;
 		}
@@ -32,4 +31,4 @@ class LayoutDefault {
 	}
 }
 
-new LayoutDefault();
+LayoutDefault::init();

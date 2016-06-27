@@ -9,20 +9,20 @@ namespace CLIENT_NAMESPACE;
  */
 class FrontPage {
 
-	public function __construct() {
+	public static function init() {
 
 		add_action( 'wp', function () {
 
 			if ( is_front_page() ) {
-				$this->hook_wordpress();
+				self::hook_wordpress();
 			}
 		} );
 	}
 
-	public function hook_wordpress() {
-		
+	public static function hook_wordpress() {
+
 	}
-	
+
 }
 
-new FrontPage();
+FrontPage::init();

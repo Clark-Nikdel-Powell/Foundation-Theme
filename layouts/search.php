@@ -9,23 +9,25 @@ namespace CLIENT_NAMESPACE;
  */
 class Search {
 
-	public function __construct() {
+	public static function init() {
 
 		add_action( 'wp_head', function () {
 
-			if ( is_search() ) {
-				$this->hook_wordpress();
+			$s = get_query_var( 's' );
+
+			if ( is_search() || '' !== $s ) {
+				self::hook_wordpress();
 			}
 		} );
 	}
 
-	public function hook_wordpress() {
-		add_action( 'cnp_before_loop', [ $this, 'search_results_header' ] );
+	public static function hook_wordpress() {
+		add_action( 'cnp_before_loop', [ __CLASS__, 'search_results_header' ] );
 	}
 
-	public function search_results_header() {
-		get_template_part('partials/header-search');
+	public static function search_results_header() {
+		get_template_part( 'partials/search-query' );
 	}
 }
 
-new Search();
+Search::init();
