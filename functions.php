@@ -20,7 +20,7 @@ require_once get_template_directory() . '/lib/cnp/pattern-library/includes.php';
 require_once get_template_directory() . '/functions/theme_utilities.php';
 
 // Admin / Setup
-require_once get_template_directory() . '/functions/setup.php';
+require_once get_template_directory() . '/functions/theme_setup.php';
 require_once get_template_directory() . '/functions/filter_acf_flexible_content_layouts_title.php';
 
 // Enqueues

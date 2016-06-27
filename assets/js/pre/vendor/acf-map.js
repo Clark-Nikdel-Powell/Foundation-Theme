@@ -16,21 +16,19 @@
 function render_map( $el ) {
 
 	// Map config data from map element
-	var zoom             = $el.data('zoom_level') == null ? 12 : $el.data('zoom_level');
-	var showMarkers      = $el.data('show_markers') == null ? true : $el.data('show_markers');
-	var disableControls  = $el.data('disable_controls') == null ? true : $el.data('disable_controls');
-	var allowPanning     = $el.data('allow_panning') == null ? true : $el.data('allow_panning');
-	var allowDragging    = $el.data('allow_dragging') == null ? true : $el.data('allow_dragging');
-	var allowZooming     = $el.data('allow_zooming') == null ? true : $el.data('allow_zooming');
-
-	console.log(showMarkers);
+	var zoomVal          = $el.data('zoom_level') == false ? 12 : $el.data('zoom_level');
+	var showMarkers      = $el.data('show_markers') == false ? true : $el.data('show_markers');
+	var disableControls  = $el.data('disable_controls') == false ? true : $el.data('disable_controls');
+	var allowPanning     = $el.data('allow_panning') == false ? true : $el.data('allow_panning');
+	var allowDragging    = $el.data('allow_dragging') == false ? true : $el.data('allow_dragging');
+	var allowZooming     = $el.data('allow_zooming') == false ? true : $el.data('allow_zooming');
 
 	// Map markers
 	var $markers = $el.find('.module-map-marker');
 
 	// Map options
 	var args = {
-		zoom		     : zoom,
+		zoomVal		     : zoom,
 		center		     : new google.maps.LatLng(0, 0),
 		disableDefaultUI : disableControls,
 		draggable        : allowDragging,
