@@ -20,6 +20,7 @@
   "devDependencies": {
     "foundation-sites": "^6.0",
     "slick-carousel": "kenwheeler/slick",
+    "cnp-scss-snippets" : "*",
     "scut": "davidtheclark/scut",
     "gulp": "*",
     "browser-sync": "*",
@@ -28,7 +29,7 @@
     "gulp-uglify": "*",
     "gulp-sass": "*",
     "gulp-autoprefixer": "*",
-    "gulp-combine-mq": "*",
+    "gulp-combine-mq": "*"
   },
   "private": true,
   "license": "MIT"
