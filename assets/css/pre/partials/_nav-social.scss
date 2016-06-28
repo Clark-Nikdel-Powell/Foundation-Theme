@@ -1,0 +1,38 @@
+/*——————————————————————————————————————————————————————————————————————————————
+/  SOCIAL NAV
+——————————————————————————————————————————————————————————————————————————————*/
+.nav-social {
+	$module-prefix: '.nav-social';
+	line-height: 1;
+
+	@include css_by_breakpoint((
+		medium: (
+			display: flex,
+			flex-direction: row,
+			align-items: center,
+			flex-wrap: nowrap,
+		),
+	));
+
+	a {
+		display: inline-block;
+	}
+	.icon-wrapper {
+		display: inline-block;
+	}
+	.icon-ion-social {
+
+		&-facebook {
+			font-size: scut-em(20);
+		}
+		&-twitter {
+			font-size: scut-em(16);
+		}
+		&-instagram {
+			font-size: scut-em(20);
+		}
+		&-youtube {
+			font-size: scut-em(15);
+		}
+	}
+}

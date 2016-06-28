@@ -1,0 +1,24 @@
+.show-block-for-print,
+.show-inline-for-print,
+.show-inline-block-for-print,
+.show-flex-for-print {
+	display: none !important;
+}
+@media print {
+
+	.show-block-for-print {
+		display: block !important;
+	}
+	.show-inline-for-print {
+		display: inline !important;
+	}
+	.show-inline-block-for-print {
+		display: inline-block !important;
+	}
+	.show-flex-for-print {
+		display: flex !important;
+	}
+	.hide-for-print {
+		display: none !important;
+	}
+}

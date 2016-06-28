@@ -1,3 +1,37 @@
-.webpage {
-	overflow: hidden;
+/*——————————————————————————————————————————————————————————————————————————————
+/  DEFAULT LAYOUT STYLES
+——————————————————————————————————————————————————————————————————————————————
+Can be applied across ANY layout on the site. A class is included so that we can remove it if necessary.
+*/
+.layout-default {
+	$module-prefix: '.layout-default';
+
+	.webpage {
+		max-width: map_get($breakpoints, xxlarge);
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+		background-color: #ffffff;
+
+		> .row {
+
+			> .column {
+
+				@include css_by_breakpoint((
+					default: (
+						padding-left: scut-rem($cnp-small-grid-row-margin),
+						padding-right: scut-rem($cnp-small-grid-row-margin)
+					),
+					medium: (
+						padding-left: scut-rem($cnp-medium-grid-row-margin),
+						padding-right: scut-rem($cnp-medium-grid-row-margin)
+					),
+					xlarge: (
+						padding-left: scut-rem($cnp-xlarge-grid-row-margin),
+						padding-right: scut-rem($cnp-xlarge-grid-row-margin)
+					)
+				));
+			}
+		}
+	}
 }

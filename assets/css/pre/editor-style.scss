@@ -1,5 +1,7 @@
 @import "global-requires";
 
+@include foundation-typography;
+
 @import "partials/content-styles";
 
 body {

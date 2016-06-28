@@ -1,5 +1,8 @@
 /*——————————————————————————————————————————————————————————————————————————————
-/  Header Int
+/  Header Section
 ————————————————————————————————————————————————————————————————————————————————
-The interior layout header. Includes breadcrumbs and another copy of the yellow and orange swirly pattern.
+The section header. Usually includes an image, section title, page title, and breadcrumbs
 */
+.header-section {
+	$module-prefix: '.header-section';
+}
