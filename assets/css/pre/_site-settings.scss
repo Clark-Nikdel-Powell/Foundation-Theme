@@ -1,135 +1,163 @@
 /*——————————————————————————————————————————————————————————————————————————————
-/  Fonts
-——————————————————————————————————————————————————————————————————————————————*/
+/  Site Settings
+——————————————————————————————————————————————————————————————————————————————
+Table of Contents:
 
-%f_header {
-  font-family: "futura-pt", serif;
-}
-$fw_b_header: 900;
-$fw_n_header: 400;
-%f_body {
-  font-family: "Helvetica", Arial, sans-serif;
-}
-$fw_b_body: 700;
-$fw_n_body: 400;
-
-%font_smoothing {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+   1. Global
+   2. Breakpoints
+   3. The Grid
+   4. Base Typography
+*/
 
 /*——————————————————————————————————————————————————————————————————————————————
-/  Variables
+/  1. Global
 ——————————————————————————————————————————————————————————————————————————————*/
 
 /*——————————————————————————————————————————————————————————
-/  Colors
+/  1.1 CNP
 ——————————————————————————————————————————————————————————*/
 
+/*——————————————————————————————————————————
+/  Font Settings
+——————————————————————————————————————————*/
+$f-sans: "sans-font", Arial, sans-serif;
+%f_sans {
+	font-family: $f-sans;
+}
+$fw-sans-bold: 700;
+$fw-sans-normal: 400;
+
+$f-serif: "serif-font", Garamond, serif;
+%f_serif {
+	font-family: $f-serif;
+}
+$fw-serif-bold: 700;
+$fw-serif-normal: 400;
+
+/*——————————————————————————————————————————
+/  Path Strings
+——————————————————————————————————————————*/
+$theme_path: '/wp-content/themes/theme_name';
+$img_path: '#{$theme_path}/assets/img';
+
+/*——————————————————————————————————————————
+/  Colors
+——————————————————————————————————————————*/
 $light-blue: #b8ebff;
 $dark-blue: #0f4876;
 
+
+/*——————————————————————————————————————————————————————————
+/  1.2 FOUNDATION
+——————————————————————————————————————————————————————————*/
+
+$global-width: rem-calc(1200);
+$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+
+
+
 /*——————————————————————————————————————————————————————————————————————————————
-/  Functions & Extensions
+/  2. Breakpoints
 ——————————————————————————————————————————————————————————————————————————————*/
 
-@function scoped-emcalc( $scoped_unit, $base_unit ) {
-  @return ( strip-unit( rem-calc( $scoped_unit, $base_unit ) ) * 1em );
-}
+/*——————————————————————————————————————————————————————————
+/  2.1 CNP
+——————————————————————————————————————————————————————————*/
 
-%flex_row {
-  display: flex;
+//
 
-  &:before, &:after {
-	display: none;
-  }
-}
 
-@mixin button_styles($bg_color, $bd_color) {
-  background-color: $bg_color;
-  border-bottom: 3px solid $bd_color;
-  border-radius: 3px;
-}
+/*——————————————————————————————————————————————————————————
+/  2.2 FOUNDATION
+——————————————————————————————————————————————————————————*/
 
-@mixin accent_border($border_top_color, $border_bottom_color, $bottom_position) {
+$breakpoints: (
+	small: 0,
+	medium: 640px,
+	large: 1024px,
+	xlarge: 1200px,
+	xxlarge: 1440px,
+);
+$breakpoint-classes: (small medium large);
 
-  position: relative;
 
-  &:after {
-	display: block;
-	width: 100%;
-	content: '';
-	position: absolute;
-	bottom: $bottom_position;
-	left: 0;
-	border-top: 1px solid $border_top_color;
-	border-bottom: 1px solid $border_bottom_color;
-  }
 
-}
+/*——————————————————————————————————————————————————————————————————————————————
+/  3. The Grid
+——————————————————————————————————————————————————————————————————————————————*/
 
-@mixin pseudo_triangle($color, $size, $direction, $ratio:1, $include_defaults:'true') {
-  border-width: $size;
+/*——————————————————————————————————————————————————————————
+/  3.1 CNP
+——————————————————————————————————————————————————————————*/
 
-  @if $include_defaults == 'true' {
-	content: '';
-	display: block;
-	width: 0;
-	height: 0;
-	position: absolute;
-	top: 0;
-	border-style: solid;
-	border-color: transparent;
-  }
+// The margin is NOT halved.
+$cnp-grid-row-margin: (
+	small: 20px,
+	medium: 40px,
+	xlarge: 60px
+);
 
-  @if $direction == 'up' {
-	border-bottom-color: $color;
-	border-bottom-width: ($size * $ratio);
-  }
+$cnp-small-grid-row-margin: map_get($cnp-grid-row-margin, 'small');
+$cnp-medium-grid-row-margin: map_get($cnp-grid-row-margin, 'medium');
+$cnp-xlarge-grid-row-margin: map_get($cnp-grid-row-margin, 'xlarge');
 
-  @if $direction == 'down' {
-	border-top-color: $color;
-	border-top-width: ($size * $ratio);
-  }
+$vertical-rhythm-map: (
+	small: 20px,
+	medium: 30px,
+);
 
-  @if $direction == 'right' {
-	border-left-color: $color;
-	border-left-width: ($size * $ratio);
-  }
+$vr-small: scut-rem( map_get($vertical-rhythm-map, 'small') );
+$vr-medium: scut-rem( map_get($vertical-rhythm-map, 'medium') );
 
-  @if $direction == 'left' {
-	border-right-color: $color;
-	border-right-width: ($size * $ratio);
-  }
-}
 
-@mixin caret_link() {
-  color: $dark_blue;
-  font-weight: $fw_b_header;
-  text-decoration: none;
-  text-transform: uppercase;
+/*——————————————————————————————————————————————————————————
+/  3.2 FOUNDATION
+——————————————————————————————————————————————————————————*/
 
-  .icon {
-	color: $body-font-color;
-	font-size: -zf-bp-to-em(14);
-  }
-  .text {
-	position: relative;
+// These values are halved.
+$grid-column-gutter: (
+	small: 24px,
+	medium: 20px,
+	xlarge: 36px,
+);
 
-	&:after {
-	  display: inline-block;
-	  width: 100%;
-	  content: '';
-	  position: absolute;
-	  left: 0;
-	  bottom: -1px;
-	  border-top: 1px solid $dark_blue;
-	}
-  }
-  &:hover {
+$small-grid-column-gutter: map_get($grid-column-gutter, 'small');
+$medium-grid-column-gutter: map_get($grid-column-gutter, 'medium');
+$xlarge-grid-column-gutter: map_get($grid-column-gutter, 'xlarge');
 
-	.text:after {
-	  border-color: transparent;
-	}
-  }
-}
+
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  4. Base Typography
+——————————————————————————————————————————————————————————————————————————————*/
+
+/*——————————————————————————————————————————————————————————
+/  4.1 CNP
+——————————————————————————————————————————————————————————*/
+
+//
+
+
+/*——————————————————————————————————————————————————————————
+/  4.2 FOUNDATION
+——————————————————————————————————————————————————————————*/
+
+$header-sizes: (
+	small: (
+		'h1': 24,
+		'h2': 20,
+		'h3': 19,
+		'h4': 18,
+		'h5': 17,
+		'h6': 16,
+	),
+	medium: (
+		'h1': 48,
+		'h2': 40,
+		'h3': 31,
+		'h4': 25,
+		'h5': 20,
+		'h6': 16,
+	),
+);
+

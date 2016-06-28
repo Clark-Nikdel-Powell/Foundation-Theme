@@ -1,0 +1,36 @@
+/*——————————————————————————————————————————
+/  Utilities: Functions, Mixins, Extensions
+——————————————————————————————————————————*/
+
+@import "../../../node_modules/cnp-scss-snippets/import";
+@import "../../../node_modules/scut/dist/scut";
+
+@import "utilities/mixins-and-functions";
+
+/*——————————————————————————————————————————
+/  Foundation Settings
+——————————————————————————————————————————*/
+
+//@import "../../../node_modules/foundation-sites/scss/vendor/normalize";
+
+// Sass utilities
+@import "../../../node_modules/foundation-sites/scss/util/util";
+
+@import "foundation-global";
+@import "foundation-settings";
+
+/*——————————————————————————————————————————
+/  Site Settings
+——————————————————————————————————————————*/
+
+@import "site-settings";
+
+/*——————————————————————————————————————————
+/  Foundation Components
+——————————————————————————————————————————*/
+
+/* You can either import all Foundation styles,
+or import them on a component basis. */
+
+// Components
+@import "../../../node_modules/foundation-sites/scss/foundation";
