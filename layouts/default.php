@@ -27,6 +27,8 @@ class LayoutDefault {
 		if ( is_singular() ) {
 			$classes[] = $post->post_name;
 		}
+		
+		$classes[] = 'layout-default';
 
 		return $classes;
 	}
