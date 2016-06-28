@@ -1,0 +1,139 @@
+/*——————————————————————————————————————————————————————————————————————————————
+/  GALLERY
+——————————————————————————————————————————————————————————————————————————————*/
+.acf-gallery {
+	$module-prefix: '.acf-gallery';
+	$pagination-and-nav-height: 40px;
+
+	/*——————————————————————————————————————————
+	/  Inside > ACF-Gallery
+	——————————————————————————————————————————*/
+	&__inside {
+
+	}
+	/*——————————————————————————————————————————
+	/  Images > Inside
+	——————————————————————————————————————————*/
+	&__images {
+
+	}
+	/*——————————————————————————————————————————
+	/  Footer > Inside
+	——————————————————————————————————————————*/
+	&__footer {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		border-bottom: 1px solid #000;
+
+		@include css_by_breakpoint((
+			default: (
+				padding-top: scut-em(10),
+				padding-bottom: scut-em(10),
+			),
+		));
+	}
+	/*——————————————————————————————————————————
+	/  Pagination > Footer
+	——————————————————————————————————————————*/
+	&__pagination {
+		flex: 0 1 auto;
+		display: flex;
+		align-items: center;
+		height: $pagination-and-nav-height;
+		white-space: nowrap;
+
+		@include css_by_breakpoint((
+			default: (
+				order: 2,
+				margin-right: scut-em(10),
+			),
+			medium: (
+				order: 1,
+				margin-right: 0, // spacing switches to captions here.
+			),
+		));
+	}
+	/*——————————————————————————————————————————
+	/  Current > Pagination
+	——————————————————————————————————————————*/
+	&__current {
+
+	}
+	/*——————————————————————————————————————————
+	/  Separator > Pagination
+	——————————————————————————————————————————*/
+	&__separator {
+
+	}
+	/*——————————————————————————————————————————
+	/  Total > Pagination
+	——————————————————————————————————————————*/
+	&__total {
+
+	}
+	/*——————————————————————————————————————————
+	/  Captions > Footer
+	——————————————————————————————————————————*/
+	&__captions {
+		flex: 1 1 auto;
+
+		@include css_by_breakpoint((
+			default: (
+				order: 1,
+				margin-top: scut-em(8),
+			),
+			medium: (
+				order: 2,
+				padding-left: scut-em(20),
+				padding-right: scut-em(20),
+			),
+		));
+	}
+	/*——————————————————————————————————————————
+	/  Caption > Captions
+	——————————————————————————————————————————*/
+	&__caption {
+		display: none;
+
+		&--isActive {
+			display: block;
+		}
+	}
+	/*——————————————————————————————————————————
+	/  Nav > Footer
+	——————————————————————————————————————————*/
+	&__nav {
+		flex: 0 1 auto;
+		height: $pagination-and-nav-height;
+		white-space: nowrap;
+
+		@include css_by_breakpoint((
+			default: (
+				order: 3
+			),
+		));
+	}
+	/*——————————————————————————————————————————
+	/  Nav-Item > Nav (button)
+	——————————————————————————————————————————*/
+	&__nav-item {
+		font-size: 20px;
+		padding: .5em;
+		background-color: #000000;
+		color: #ffffff;
+		outline: none;
+	}
+	/*——————————————————————————————————————————
+	/  Prev > Nav (button)
+	——————————————————————————————————————————*/
+	&__prev {
+		border-right: 1px solid #777777;
+	}
+	/*——————————————————————————————————————————
+	/  Prev > Nav (button)
+	——————————————————————————————————————————*/
+	&__next {
+
+	}
+}

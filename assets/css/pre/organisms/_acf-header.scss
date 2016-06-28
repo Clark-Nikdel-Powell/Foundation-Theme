@@ -1,0 +1,78 @@
+/*——————————————————————————————————————————————————————————————————————————————
+/  HEADER
+——————————————————————————————————————————————————————————————————————————————*/
+.acf-header {
+	$module-prefix: '.acf-map';
+	@extend .row;
+	position: relative;
+
+	/*——————————————————————————————————————————
+	/  Background > ACF-Header
+	——————————————————————————————————————————*/
+	&__background {
+		width: 100vw;
+		max-width: map_get($breakpoints, xxlarge);
+		height: 100%;
+		position: absolute;
+		top: 0;
+		margin-left: 50%;
+		overflow: hidden;
+
+		@include css_by_breakpoint((
+			default: (
+				left: -50vw
+			),
+			xxlarge: (
+				left: (map_get($breakpoints, xxlarge) / 2) * -1
+			)
+		));
+	}
+	/*——————————————————————————————————————————
+	/  Image > Background (img)
+	——————————————————————————————————————————*/
+	&__image {
+		display: block;
+		min-width: 100%;
+		max-width: none;
+		width: auto;
+		min-height: 100%;
+
+		@include css_by_breakpoint((
+			xxlarge: (
+				max-width: map_get($breakpoints, xxlarge),
+			)
+		));
+	}
+	/*——————————————————————————————————————————
+	/  Text > ACF-Header
+	——————————————————————————————————————————*/
+	&__text {
+		@extend .columns;
+		position: relative;
+		z-index: 2;
+	}
+	/*——————————————————————————————————————————
+	/  Title > Text (h2)
+	——————————————————————————————————————————*/
+	&__title {
+
+	}
+	/*——————————————————————————————————————————
+	/  Subtitle > Text (h3)
+	——————————————————————————————————————————*/
+	&__subtitle {
+
+	}
+	/*——————————————————————————————————————————
+	/  Description > Text (div)
+	——————————————————————————————————————————*/
+	&__description {
+
+	}
+	/*——————————————————————————————————————————
+	/  Link > Text (a)
+	——————————————————————————————————————————*/
+	&__link {
+
+	}
+}
