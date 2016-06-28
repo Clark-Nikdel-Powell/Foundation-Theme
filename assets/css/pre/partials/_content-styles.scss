@@ -1,0 +1,243 @@
+/*——————————————————————————————————————————————————————————————————————————————
+/  RESET
+——————————————————————————————————————————————————————————————————————————————*/
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+	margin: 0;
+	padding: 0;
+}
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  UNIVERSAL TYPOGRAPHY STYLES
+——————————————————————————————————————————————————————————————————————————————*/
+
+/*——————————————————————————————————————————————————————————
+/  BUTTON STYLES
+——————————————————————————————————————————————————————————*/
+
+.btn {
+	@extend %f_serif;
+	display: inline-block;
+	padding: scut-em(18, 22) scut-em(22, 22) scut-em(13, 22);
+	border-bottom: 4px solid #000;
+	border-radius: 5px;
+	line-height: 1;
+	text-align: center;
+
+	@include css_by_breakpoint((
+		default: (
+			font-size: scut-em(16),
+		),
+		medium: (
+			font-size: scut-em(22),
+		),
+	));
+}
+
+@mixin btn($color, $background, $border-color, $hover-color: $color, $hover-background: $background, $hover-border-color: $border-color) {
+	@extend .btn;
+	color: $color;
+	background-color: $background;
+	border-bottom-color: $border-color;
+
+	&:hover {
+		color: $hover-color;
+		background-color: $hover-background;
+		border-bottom-color: $hover-border-color;
+	}
+}
+
+.btn {
+
+	&--isGreen {
+		@include btn(#fff, $green, $green-dark);
+	}
+}
+
+/*——————————————————————————————————————————————————————————
+/  ACCENT LINE
+——————————————————————————————————————————————————————————*/
+
+@mixin accent_line($width: 52px, $color: $color-e0, $position: center) {
+	display: block;
+	width: $width;
+	height: 1px;
+	position: relative;
+	content: '';
+	background-color: $color;
+
+	@if (left == $position) {
+		left: 0;
+	}
+	@if (center == $position) {
+		left: 50%;
+		margin-left: $width*-0.5;
+	}
+	@if (right == $position) {
+		right: 0;
+	}
+}
+
+/*——————————————————————————————————————————————————————————
+/  HEADER STYLES
+——————————————————————————————————————————————————————————*/
+
+@mixin h1($color: $green-dark) {
+	@extend %f_sans;
+	color: $color;
+	font-weight: $fw-sans-normal;
+	line-height: 1.05;
+
+	@include css_by_breakpoint((
+		default: (
+			font-size: rem-calc(map_fetch($header-sizes, small h1))
+		),
+		medium: (
+			font-size: rem-calc(map_fetch($header-sizes, medium h1))
+		),
+		large: (
+			font-size: rem-calc(map_fetch($header-sizes, large h1)),
+		),
+		xlarge: (
+			font-size: rem-calc(map_fetch($header-sizes, xlarge h1)),
+		)
+	));
+}
+
+h1 {
+	@include h1();
+}
+
+@mixin h2($color: $green) {
+	@extend %f_sans;
+	color: $color;
+	font-weight: $fw-sans-normal;
+	line-height: 1.15;
+
+	@include css_by_breakpoint((
+		default: (
+			font-size: rem-calc(map_fetch($header-sizes, small h2))
+		),
+		medium: (
+			font-size: rem-calc(map_fetch($header-sizes, medium h2))
+		),
+		large: (
+			font-size: rem-calc(map_fetch($header-sizes, large h2))
+		),
+	));
+}
+
+h2 {
+	@include h2();
+}
+
+@mixin h3($color: $green) {
+	@extend %f_serif;
+	color: $color;
+	line-height: 1.2;
+	font-weight: $fw-serif-normal;
+
+	@include css_by_breakpoint((
+		default: (
+			font-size: rem-calc(map_fetch($header-sizes, small h3))
+		),
+		medium: (
+			font-size: rem-calc(map_fetch($header-sizes, medium h3))
+		),
+		large: (
+			font-size: rem-calc(map_fetch($header-sizes, large h3))
+		)
+	));
+}
+
+h3 {
+	@include h3();
+}
+
+@mixin h4($color: $green) {
+	@extend %f_sans;
+	color: $color;
+	font-weight: $fw-sans-normal;
+	line-height: 1.25;
+
+	@include css_by_breakpoint((
+		default: (
+			font-size: rem-calc(map_fetch($header-sizes, small h4))
+		),
+		medium: (
+			font-size: rem-calc(map_fetch($header-sizes, medium h4))
+		),
+		large: (
+			font-size: rem-calc(map_fetch($header-sizes, large h4))
+		)
+	));
+}
+
+h4 {
+	@include h4();
+}
+
+@mixin h5($color: $green) {
+	@extend %f_serif;
+	color: $color;
+	line-height: 1.4;
+	font-weight: $fw-serif-normal;
+
+	@include css_by_breakpoint((
+		default: (
+			font-size: rem-calc(map_fetch($header-sizes, small h5))
+		),
+		medium: (
+			font-size: rem-calc(map_fetch($header-sizes, medium h5))
+		),
+		large: (
+			font-size: rem-calc(map_fetch($header-sizes, large h5))
+		)
+	));
+}
+
+h5 {
+	@include h5();
+}
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  CONTENT-SPECIFIC TYPOGRAPHY STYLES
+——————————————————————————————————————————————————————————————————————————————*/
+// Content styles are set up in a mixin so that they can be manually included for
+// .postcontent and the editor styles.
+@mixin content_styles() {
+
+	h1, h2, h3, h4, h5, h6 {
+		@include responsive_vertical_rhythm(padding-top, 1);
+	}
+	h2 {
+	}
+	h3 {
+	}
+	h4 {
+	}
+	p, ul, ol {
+		@include responsive_vertical_rhythm(margin-top, 1);
+	}
+	p {
+	}
+	ul, ol {
+		padding-left: 1.25rem;
+	}
+	ul ul,
+	ul ol,
+	ol ul,
+	ol ol {
+		margin-bottom: 0;
+	}
+	li {
+	}
+}
+
+.postcontent {
+	@include content_styles;
+
+	> *:first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}
+}

@@ -4,55 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e90f5b4b63b959b0ab55c727a45cad4",
-    "content-hash": "4d9ed4665bce019fbeaaf1abd73d6246",
+    "hash": "c437fe61458b534eb3c201e8901dabcd",
+    "content-hash": "ce667200801c6daac973e0e41d74dd5e",
     "packages": [
         {
-            "name": "cnp/cnp-haversine",
-            "version": "v0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Clark-Nikdel-Powell/Module-CNP-Haversine.git",
-                "reference": "22d3dea4dfacad494842e695bb194f8f7d53d2b8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Module-CNP-Haversine/zipball/22d3dea4dfacad494842e695bb194f8f7d53d2b8",
-                "reference": "22d3dea4dfacad494842e695bb194f8f7d53d2b8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Glenn Welser",
-                    "email": "glenn@clarknikdelpowell.com",
-                    "homepage": "https://clarknikdelpowell.com/agency/people/glenn",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Get distance between two points of interest.",
-            "homepage": "https://github.com/Clark-Nikdel-Powell/Module-CNP-Haversine",
-            "time": "2015-12-09 18:24:18"
-        },
-        {
             "name": "cnp/pattern-library",
-            "version": "0.4.0",
+            "version": "v0.14.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Clark-Nikdel-Powell/Pattern-Library.git",
-                "reference": "a6e34f14774677b37b3272e28d7be0d495bfad59"
+                "reference": "c35fc2453cab8b63509eb15f38a5d7939512fc2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Pattern-Library/zipball/a6e34f14774677b37b3272e28d7be0d495bfad59",
-                "reference": "a6e34f14774677b37b3272e28d7be0d495bfad59",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Pattern-Library/zipball/c35fc2453cab8b63509eb15f38a5d7939512fc2f",
+                "reference": "c35fc2453cab8b63509eb15f38a5d7939512fc2f",
                 "shasum": ""
             },
             "require": {
@@ -73,20 +39,20 @@
             ],
             "description": "Stack atoms and molecules faster by using named atoms and structure arrays.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Pattern-Library",
-            "time": "2016-02-03 15:28:50"
+            "time": "2016-06-27 18:46:12"
         },
         {
-            "name": "cnp/wp-acf-flex-content",
-            "version": "v0.2",
+            "name": "cnp/php-utilities",
+            "version": "v0.7.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Clark-Nikdel-Powell/Module-WP-ACF-Flex-Content-Modules.git",
-                "reference": "d2feada77d1bba034ba3b31205d6f58539c449eb"
+                "url": "https://github.com/Clark-Nikdel-Powell/PHP-Utilities.git",
+                "reference": "62019911d2522a0c05b327f3068b047f2fc40983"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Module-WP-ACF-Flex-Content-Modules/zipball/d2feada77d1bba034ba3b31205d6f58539c449eb",
-                "reference": "d2feada77d1bba034ba3b31205d6f58539c449eb",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/PHP-Utilities/zipball/62019911d2522a0c05b327f3068b047f2fc40983",
+                "reference": "62019911d2522a0c05b327f3068b047f2fc40983",
                 "shasum": ""
             },
             "require": {
@@ -105,22 +71,22 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Build flex content layouts faster with prebuilt ACF modules. Includes filters for easy modifications.",
-            "homepage": "https://github.com/Clark-Nikdel-Powell/Module-WP-ACF-Flex-Content-Modules",
-            "time": "2016-01-05 20:39:36"
+            "description": "Generic PHP functions for standardized data manipulation.",
+            "homepage": "https://github.com/Clark-Nikdel-Powell/PHP-Utilities",
+            "time": "2016-06-27 18:31:57"
         },
         {
             "name": "cnp/wp-atom-builder",
-            "version": "v0.8",
+            "version": "v0.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Clark-Nikdel-Powell/Atom-Builder.git",
-                "reference": "30eec8edd9be11be6b9cd2f51463f131aa9c1bf4"
+                "reference": "77d8b3fe1102d6f9c388fd6574ad5741efce7973"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Atom-Builder/zipball/30eec8edd9be11be6b9cd2f51463f131aa9c1bf4",
-                "reference": "30eec8edd9be11be6b9cd2f51463f131aa9c1bf4",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Atom-Builder/zipball/77d8b3fe1102d6f9c388fd6574ad5741efce7973",
+                "reference": "77d8b3fe1102d6f9c388fd6574ad5741efce7973",
                 "shasum": ""
             },
             "require": {
@@ -141,20 +107,20 @@
             ],
             "description": "Build filterable atomic elements.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Atom-Builder",
-            "time": "2016-03-09 18:52:26"
+            "time": "2016-06-20 15:50:15"
         },
         {
             "name": "cnp/wp-highest-ancestor",
-            "version": "v0.1.1",
+            "version": "v0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Clark-Nikdel-Powell/Module-WP-Highest-Ancestor.git",
-                "reference": "b336a9c4c747abd8dbf5d4d9f1f09cc355f81e67"
+                "reference": "f007dafc8d7013adba993c2558610b99ca5bebe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Module-WP-Highest-Ancestor/zipball/b336a9c4c747abd8dbf5d4d9f1f09cc355f81e67",
-                "reference": "b336a9c4c747abd8dbf5d4d9f1f09cc355f81e67",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Module-WP-Highest-Ancestor/zipball/f007dafc8d7013adba993c2558610b99ca5bebe8",
+                "reference": "f007dafc8d7013adba993c2558610b99ca5bebe8",
                 "shasum": ""
             },
             "require": {
@@ -175,20 +141,20 @@
             ],
             "description": "A function for getting information about the highest ancestor of a post or term. Useful for section title information.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Module-WP-Highest-Ancestor",
-            "time": "2016-03-22 21:09:08"
+            "time": "2016-05-24 19:32:31"
         },
         {
             "name": "cnp/wp-nav-filters",
-            "version": "v0.3",
+            "version": "v0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Clark-Nikdel-Powell/Module-WP-Nav-Filters.git",
-                "reference": "ad4a0f14ae253f2ec971996f4c6fbe0ea4b7ac8a"
+                "reference": "a6aaee7c1d1afc381fc79a333fa4598baa098614"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Module-WP-Nav-Filters/zipball/ad4a0f14ae253f2ec971996f4c6fbe0ea4b7ac8a",
-                "reference": "ad4a0f14ae253f2ec971996f4c6fbe0ea4b7ac8a",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Module-WP-Nav-Filters/zipball/a6aaee7c1d1afc381fc79a333fa4598baa098614",
+                "reference": "a6aaee7c1d1afc381fc79a333fa4598baa098614",
                 "shasum": ""
             },
             "require": {
@@ -209,47 +175,7 @@
             ],
             "description": "A module for filtering WordPress nav menu args & output according to our usual needs.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Module-WP-Nav-Filters",
-            "time": "2015-12-18 13:26:01"
-        },
-        {
-            "name": "cnp/wp-print-on-present",
-            "version": "v0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Clark-Nikdel-Powell/Module-WP-Print-on-Present.git",
-                "reference": "b65e4e2fb441ae9f133eea0f9b3a84e6ba1d1185"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Module-WP-Print-on-Present/zipball/b65e4e2fb441ae9f133eea0f9b3a84e6ba1d1185",
-                "reference": "b65e4e2fb441ae9f133eea0f9b3a84e6ba1d1185",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Josh Nederveld",
-                    "email": "joshn@clarknikdelpowell.com",
-                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Glenn Welser",
-                    "email": "glenn@clarknikdelpowell.com",
-                    "homepage": "https://clarknikdelpowell.com/agency/people/glenn",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Shorthand function that echos a variable or function if data is present.",
-            "homepage": "https://github.com/Clark-Nikdel-Powell/Module-WP-Print-on-Present",
-            "time": "2015-12-04 18:16:20"
+            "time": "2016-04-06 20:29:37"
         },
         {
             "name": "cnp/wp-queried-object-parser",
@@ -284,40 +210,6 @@
             "description": "Provides shorthand access to a standard description of the WordPress object being requested.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Module-WP-Queried-Object-Parser",
             "time": "2016-03-22 20:05:09"
-        },
-        {
-            "name": "cnp/wp-subnav",
-            "version": "v0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Clark-Nikdel-Powell/Module-WP-Subnav.git",
-                "reference": "33f9d6fe7788727c3290622344b41c18fd08d631"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Module-WP-Subnav/zipball/33f9d6fe7788727c3290622344b41c18fd08d631",
-                "reference": "33f9d6fe7788727c3290622344b41c18fd08d631",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Josh Nederveld",
-                    "email": "joshn@clarknikdelpowell.com",
-                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Fast and customizable WordPress subnavs",
-            "homepage": "https://github.com/Clark-Nikdel-Powell/Module-WP-Subnav",
-            "time": "2016-03-21 15:32:46"
         }
     ],
     "packages-dev": [],
