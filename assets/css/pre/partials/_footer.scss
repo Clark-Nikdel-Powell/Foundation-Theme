@@ -3,4 +3,116 @@
 ——————————————————————————————————————————————————————————————————————————————*/
 .footer {
 	$module-prefix: '.footer';
+
+	/*——————————————————————————————————————————————————————————
+	/  Bottom of Footer (copyright, menu, social nav)
+	——————————————————————————————————————————————————————————*/
+	&__bottom {
+		@include color_bar(#000);
+		@include responsive_vertical_rhythm(padding-top, 1);
+		@include responsive_vertical_rhythm(padding-bottom, 1);
+		display: flex;
+
+		@include css_by_breakpoint((
+			default: (
+				flex-direction: column,
+			),
+			medium: (
+				flex-direction: row,
+				align-items: center,
+				justify-content: space-between,
+				white-space: nowrap,
+			),
+		));
+	}
+	&__copyright {
+		flex: 1 0 auto;
+		display: flex;
+		color: #fff;
+
+		@include css_by_breakpoint((
+			default: (
+				flex-direction: column,
+				font-size: scut-em(15),
+			),
+			medium: (
+				flex-direction: row,
+				align-items: center,
+				font-size: scut-em(14),
+			),
+		));
+	}
+	&__copyright-date {
+
+		@include css_by_breakpoint((
+			default: (
+				flex: 1 1 100%,
+			),
+			medium: (
+				flex: 0 0 auto
+			),
+		));
+	}
+	&__copyright-menu {
+		line-height: 1;
+
+		@include css_by_breakpoint((
+			default: (
+				flex: 1 1 100%,
+				margin-top: $vr-small,
+			),
+			medium: (
+				flex: 0 0 auto,
+				margin-top: 0,
+				margin-left: scut-em(12, 14),
+			),
+		));
+
+		a {
+			display: inline-block;
+			padding-left: scut-em(10, 14);
+			padding-right: scut-em(10, 14);
+			border-left: 1px solid #505050;
+
+			&:first-child {
+
+				@include css_by_breakpoint((
+					small: (
+						padding-left: 0,
+						border-left: none,
+					),
+				));
+			}
+		}
+	}
+	&__nav-social {
+		$sm-padding: 8;
+		color: #ffffff;
+
+		@include css_by_breakpoint((
+			small: (
+				font-size: scut-em(20),
+				flex: 1 0 auto,
+				display: flex,
+				align-items: center,
+				justify-content: space-between,
+				max-width: 160px,
+				margin-top: $vr-small,
+				margin-left: scut-rem($sm-padding * -1),
+				margin-bottom: scut-rem($sm-padding * -1),
+			),
+			medium: (
+				flex: 0 1 auto
+			),
+		));
+
+		a {
+
+			@include css_by_breakpoint((
+				small: (
+					padding: scut-rem($sm-padding),
+				),
+			));
+		}
+	}
 }

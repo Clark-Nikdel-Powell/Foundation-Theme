@@ -1,4 +1,5 @@
 <?php
+namespace CNP;
 /**
  * Intended for WordPress, theme-specific setup.
  * Documentation: https://github.com/Clark-Nikdel-Powell/Foundation-Theme/wiki/Files
@@ -24,7 +25,7 @@ add_action( 'after_setup_theme', function () {
 		'primary'   => 'Primary Menu',
 		'footer'    => 'Footer Menu',
 		'copyright' => 'Copyright Menu',
-		'social'    => 'Social Menu'
+		'social'    => 'Social Menu',
 	) );
 
 } );
@@ -49,6 +50,6 @@ function add_favicon() {
 	echo '<link rel="shortcut icon" href="' . $ico_url . '">';
 }
 
-add_action( 'wp_head', 'add_favicon' );
-add_action( 'login_head', 'add_favicon' );
-add_action( 'admin_head', 'add_favicon' );
+add_action( 'wp_head', 'CNP\add_favicon' );
+add_action( 'login_head', 'CNP\add_favicon' );
+add_action( 'admin_head', 'CNP\add_favicon' );
