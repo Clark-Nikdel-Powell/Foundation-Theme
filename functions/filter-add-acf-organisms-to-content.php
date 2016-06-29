@@ -1,4 +1,5 @@
 <?php
+namespace CNP;
 /**
  * cnp_add_acf_organisms_to_content
  *
@@ -14,7 +15,7 @@
  *
  * @return string The modified post content.
  */
-function cnp_add_acf_organisms_to_content( $content ) {
+function add_acf_organisms_to_content( $content ) {
 
 	global $post;
 
@@ -34,7 +35,8 @@ function cnp_add_acf_organisms_to_content( $content ) {
 
 			if ( class_exists( $acf_atom_or_organism_class_name ) ) {
 				$atom_or_organism = new $acf_atom_or_organism_class_name( $layout_data );
-				$atom_or_organism->getMarkup();
+				$atom_or_organism->get_markup();
+
 				$content = apply_filters( $atom_or_organism->name . '_before', $content );
 
 				if ( '' !== $atom_or_organism->markup ) {
@@ -50,4 +52,4 @@ function cnp_add_acf_organisms_to_content( $content ) {
 
 }
 
-add_filter( 'the_content', 'cnp_add_acf_organisms_to_content', 10, 1 );
+add_filter( 'the_content', 'CNP\add_acf_organisms_to_content', 10, 1 );

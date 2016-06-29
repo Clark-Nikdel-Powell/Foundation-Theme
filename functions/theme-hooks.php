@@ -1,6 +1,7 @@
 <?php
+namespace CNP;
 /**
- * cnp_get_action_suffix.
+ * CNP\get_action_suffix.
  *
  * Gets the suffix of a namespaced action, namespacing it either by the queried_object or the post_object.
  *
@@ -10,7 +11,7 @@
  *
  * @return string A hyphen-separated type-object string to be appended to the main action name.
  */
-function cnp_get_action_suffix() {
+function get_action_suffix() {
 
 	// The return variable.
 	$action_suffix = '';
@@ -40,7 +41,7 @@ function cnp_get_action_suffix() {
 
 
 /**
- * cnp_get_action
+ * CNP\get_action
  *
  * Builds a namespaced action name based on a general prefix and specific suffix.
  *
@@ -48,9 +49,9 @@ function cnp_get_action_suffix() {
  *
  * @return string
  */
-function cnp_get_action( $action_prefix ) {
+function get_action( $action_prefix ) {
 
-	$action_suffix = cnp_get_action_suffix();
+	$action_suffix = get_action_suffix();
 
 	$action_name = sprintf( '%1s-%2s', $action_prefix, $action_suffix );
 

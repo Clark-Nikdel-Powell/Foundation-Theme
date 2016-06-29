@@ -1,4 +1,5 @@
 <?php
+namespace CNP;
 /**
  * cnp_template_selection
  *
@@ -15,7 +16,7 @@
  *
  * @return array $templates The templates array.
  **/
-function cnp_template_selection( $wordpress_template ) {
+function template_selection( $wordpress_template ) {
 
 	global $main_template;
 	$main_template = $wordpress_template;
@@ -34,21 +35,21 @@ function cnp_template_selection( $wordpress_template ) {
 		$str = substr( $template, 0, - 4 );
 		array_unshift( $templates, sprintf( $str . '-%s.php', $base ) );
 	}
-	
+
 	$filter_name = 'cnp_wrap_' . $slug;
 	$templates = apply_filters( $filter_name, $templates );
 
 	return locate_template( $templates );
 }
 
-add_filter( 'template_include', 'cnp_template_selection', 20, 1 );
+add_filter( 'template_include', 'CNP\template_selection', 20, 1 );
 
 /**
  * cnp_template_path
  *
  * @return array $main_template The template to load in the base.php file.
  **/
-function cnp_template_path() {
+function template_path() {
 
 	global $main_template;
 

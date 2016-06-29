@@ -17,25 +17,23 @@ require_once get_template_directory() . '/lib/cnp/wp-atom-builder/cnp-atom-build
 require_once get_template_directory() . '/lib/cnp/pattern-library/includes.php';
 
 // Theme Utilities
-require_once get_template_directory() . '/functions/theme_utilities.php';
+require_once get_template_directory() . '/functions/theme-utilities.php';
 
 // Admin / Setup
-require_once get_template_directory() . '/functions/theme_setup.php';
-require_once get_template_directory() . '/functions/filter_acf_flexible_content_layouts_title.php';
+require_once get_template_directory() . '/functions/theme-setup.php';
+require_once get_template_directory() . '/functions/filter-acf-flexible-content-layouts-title.php';
 
 // Enqueues
 require_once get_template_directory() . '/functions/enqueues.php';
 
 // Layout assembly functions
-require_once get_template_directory() . '/functions/function_get_content_template_array.php';
-require_once get_template_directory() . '/functions/theme_hooks.php';
+require_once get_template_directory() . '/functions/function-get-content-template-array.php';
+require_once get_template_directory() . '/functions/theme-hooks.php';
 
 // Front-end functions/filters
-require_once get_template_directory() . '/functions/function_content_class.php';
-
-require_once get_template_directory() . '/functions/filter_wp_title.php';
-require_once get_template_directory() . '/functions/filter_screen_reader_class.php';
-require_once get_template_directory() . '/functions/filter_add_acf_organisms_to_content.php';
+require_once get_template_directory() . '/functions/filter-wp-title.php';
+require_once get_template_directory() . '/functions/filter-screen-reader-class.php';
+require_once get_template_directory() . '/functions/filter-add-acf-organisms-to-content.php';
 require_once get_template_directory() . '/functions/filter-add-icons-to-social-nav.php';
 
 // Patterns

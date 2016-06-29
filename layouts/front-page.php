@@ -20,9 +20,8 @@ class FrontPage {
 	}
 
 	public static function hook_wordpress() {
-
+	
 	}
-
 }
 
 FrontPage::init();

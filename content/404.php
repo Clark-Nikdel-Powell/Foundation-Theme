@@ -6,7 +6,7 @@
 		'container'      => false,
 		'items_wrap'     => false,
 		'depth'          => 1,
-		'echo'           => false
+		'echo'           => false,
 	];
 	echo str_replace( '</a>', '</a><br>', wp_nav_menu( $args ) );
 	?>

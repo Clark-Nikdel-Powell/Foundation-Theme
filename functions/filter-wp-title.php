@@ -1,11 +1,16 @@
 <?php
+namespace CNP;
 /**
- * cnp_wp_title
+ * wp_title
  *
  * Adds the Site Name and/or description to the WP Title
  *
+ * @param $title
+ * @param $sep
+ *
+ * @return string
  */
-function cnp_wp_title( $title, $sep ) {
+function wp_title( $title, $sep ) {
 	global $paged, $page;
 
 	// ignore feed pages
@@ -30,4 +35,4 @@ function cnp_wp_title( $title, $sep ) {
 	return $title;
 }
 
-add_filter( 'wp_title', 'cnp_wp_title', 10, 2 );
+add_filter( 'wp_title', 'CNP\wp_title', 10, 2 );

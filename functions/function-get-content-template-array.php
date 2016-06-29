@@ -1,6 +1,7 @@
 <?php
+namespace CNP;
 /**
- * cnp_get_content_template_array.
+ * get_content_template_array.
  *
  * Allows us to split up Loop content based on archive vs. singular views by
  * building an array of content templates to check using locate_template() in index.php.
@@ -24,7 +25,7 @@
  *
  * @return array An array of templates to check using locate_template.
  */
-function cnp_get_content_template_array() {
+function get_content_template_array() {
 
 	// I used $post instead of the queried_object here because
 	// we're trying to figure out which post content template to use.
@@ -38,6 +39,7 @@ function cnp_get_content_template_array() {
 
 	$post_type = '';
 
+	// Generic Templates
 	if ( is_archive() || is_home() || is_search() ) {
 		array_unshift( $templates, $content_dir . 'content-archive.php' );
 	}
@@ -48,8 +50,13 @@ function cnp_get_content_template_array() {
 		$post_type = '404';
 		array_unshift( $templates, $content_dir . '404.php' );
 	}
+	if ( is_search() ) {
+		$post_type = 'search';
+		array_unshift( $templates, $content_dir . 'search.php' );
+	}
 
-	if ( ! empty ( $post ) ) {
+	// Post-Type Specific Templates
+	if ( ! empty( $post ) ) {
 
 		// The post type name forms the base of our file checks.
 		$post_type              = $post->post_type;
@@ -72,6 +79,7 @@ function cnp_get_content_template_array() {
 			array_unshift( $templates, $post_type_path_singular );
 		}
 	}
+	// Run after Post-Type Specific so that it has priority.
 	if ( is_front_page() ) {
 		$post_type = 'front-page';
 		array_unshift( $templates, $content_dir . 'front-page.php' );

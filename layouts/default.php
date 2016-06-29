@@ -27,7 +27,7 @@ class LayoutDefault {
 		if ( is_singular() ) {
 			$classes[] = $post->post_name;
 		}
-		
+
 		$classes[] = 'layout-default';
 
 		return $classes;
@@ -37,7 +37,7 @@ class LayoutDefault {
 
 		$children_present = strpos( $output, "<ul class='children'>" );
 
-		if ( $children_present !== false ) {
+		if ( false !== $children_present  ) {
 			$output = str_replace( "<ul class='children'>", "<ul class='subnav__children'>", $output );
 		}
 

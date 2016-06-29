@@ -4,30 +4,30 @@
  */
 
 do_action( 'cnp_before_index' );
-do_action( cnp_get_action( 'before_index' ) );
+do_action( CNP\get_action( 'before_index' ) );
 
 if ( have_posts() ) {
 
 	do_action( 'cnp_before_loop' );
-	do_action( cnp_get_action( 'before_loop' ) );
+	do_action( CNP\get_action( 'before_loop' ) );
 
 	while ( have_posts() ) {
 
 		the_post();
 
 		do_action( 'cnp_before_content' );
-		do_action( cnp_get_action( 'before_content' ) );
+		do_action( CNP\get_action( 'before_content' ) );
 
-		locate_template( cnp_get_content_template_array(), true, false );
+		locate_template( CNP\get_content_template_array(), true, false );
 
-		do_action( cnp_get_action( 'after_content' ) );
+		do_action( CNP\get_action( 'after_content' ) );
 		do_action( 'cnp_after_content' );
 	}
 
-	do_action( cnp_get_action( 'after_loop' ) );
+	do_action( CNP\get_action( 'after_loop' ) );
 	do_action( 'cnp_after_loop' );
-	
+
 }
 
-do_action( cnp_get_action( 'after_index' ) );
+do_action( CNP\get_action( 'after_index' ) );
 do_action( 'cnp_after_index' );

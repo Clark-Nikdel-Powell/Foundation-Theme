@@ -1,16 +1,18 @@
 <?php
 namespace CNP;
 /**
- * cnp_social_menu_icons
+ * social_menu_icons
  *
  * Adds the social icons to the social menu.
  *
+ * @param $menu_items
+ * @param $args
+ *
+ * @return mixed
  */
-add_filter( 'wp_nav_menu_objects', 'CNP\social_menu_icons', 20, 2 );
-
 function social_menu_icons( $menu_items, $args ) {
 
-	if ( 'social' === $args->menu->slug  ) {
+	if ( 'social' === $args->menu->slug ) {
 
 		foreach ( $menu_items as $item_key => $menu_item ) {
 
@@ -26,3 +28,5 @@ function social_menu_icons( $menu_items, $args ) {
 
 	return $menu_items;
 }
+
+add_filter( 'wp_nav_menu_objects', 'CNP\social_menu_icons', 20, 2 );
