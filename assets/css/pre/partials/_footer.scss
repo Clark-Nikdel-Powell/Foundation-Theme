@@ -54,12 +54,14 @@
 		));
 	}
 	&__copyright-menu {
+		$sm-padding: 10;
 		line-height: 1;
 
 		@include css_by_breakpoint((
 			default: (
 				flex: 1 1 100%,
 				margin-top: $vr-small,
+				margin-left: scut-rem($sm-padding * -1),
 			),
 			medium: (
 				flex: 0 0 auto,
@@ -70,15 +72,14 @@
 
 		a {
 			display: inline-block;
-			padding-left: scut-em(10, 14);
-			padding-right: scut-em(10, 14);
+			padding-left: scut-em($sm-padding, 14);
+			padding-right: scut-em($sm-padding, 14);
 			border-left: 1px solid #505050;
 
 			&:first-child {
 
 				@include css_by_breakpoint((
 					small: (
-						padding-left: 0,
 						border-left: none,
 					),
 				));
