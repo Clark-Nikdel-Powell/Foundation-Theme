@@ -41,6 +41,12 @@ $theme_path: '/wp-content/themes/theme_name';
 $img_path: '#{$theme_path}/assets/img';
 
 /*——————————————————————————————————————————
+/  Z-Index
+——————————————————————————————————————————*/
+$global-elements: '';
+$specific-organism-elements: '';
+
+/*——————————————————————————————————————————
 /  Colors
 ——————————————————————————————————————————*/
 $light-blue: #b8ebff;
