@@ -15,7 +15,6 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	wp_register_script( 'cnp-foundation-tabs', get_template_directory_uri() . '/node_modules/foundation-sites/js/foundation.tabs.js', array( 'cnp-site' ), false, true );
 
-
 	// Enqueue Scripts
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'cnp-site' );
