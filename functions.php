@@ -32,6 +32,7 @@ require_once get_template_directory() . '/functions/theme-hooks.php';
 
 // Front-end functions/filters
 require_once get_template_directory() . '/functions/filter-wp-title.php';
+require_once get_template_directory() . '/functions/action-add-svg-icon-sprite.php';
 require_once get_template_directory() . '/functions/filter-screen-reader-class.php';
 require_once get_template_directory() . '/functions/filter-add-acf-organisms-to-content.php';
 require_once get_template_directory() . '/functions/filter-add-icons-to-social-nav.php';
