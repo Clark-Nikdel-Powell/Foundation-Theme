@@ -20,7 +20,9 @@ require_once get_template_directory() . '/functions/filter-add-icons-to-social-n
 // Patterns
 
 // Layout-Specific Actions/Filters
+require_once get_template_directory() . '/layouts/default.php';
 require_once get_template_directory() . '/layouts/front-page.php';
 require_once get_template_directory() . '/layouts/interior.php';
+require_once get_template_directory() . '/layouts/search.php';
 
 // Widgets
