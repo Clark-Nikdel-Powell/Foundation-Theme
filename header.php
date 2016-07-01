@@ -1,37 +1,38 @@
 <?php
 
-$logo    = file_get_contents( get_template_directory() . '/assets/img/logo.svg' );
+// $logo    = file_get_contents( get_template_directory() . '/assets/img/logo.svg' );
+$logo    = '';
 $navicon = CNP\Utility::get_svg_icon( 'icon-ion-navicon' );
 
 $masthead_args = [
 	'name'      => 'masthead',
 	'tag'       => 'header',
 	'structure' => [
-		'row-support'          => [
+		'row-support'   => [
 			'class'    => [ 'hide-for-small-only' ],
 			'children' => [ 'nav-secondary', 'nav-social', 'search' ],
 			'sibling'  => 'row-primary',
 		],
-		'nav-secondary'        => [
+		'nav-secondary' => [
 			'atom'      => 'Menu',
 			'menu_args' => [
 				'theme_location' => 'secondary',
 			],
 		],
-		'nav-social'           => [
-			'class' => [ 'nav-social' ],
+		'nav-social'    => [
+			'class'     => [ 'nav-social' ],
 			'atom'      => 'Menu',
 			'menu_args' => [
 				'theme_location' => 'social',
 			],
 		],
-		'search'               => [
+		'search'        => [
 			'content' => get_search_form( false ),
 		],
-		'row-primary' => [
+		'row-primary'   => [
 			'children' => [ 'logo', 'navs-toggle', 'navs' ],
 		],
-		'logo'              => [
+		'logo'          => [
 			'parts' => [
 				'logo-title' => [
 					'class'   => [ 'show-for-sr' ],
@@ -47,7 +48,7 @@ $masthead_args = [
 				],
 			],
 		],
-		'navs-toggle' => [
+		'navs-toggle'   => [
 			'atom'       => 'Link',
 			'href'       => '#',
 			'attributes' => [
@@ -57,10 +58,10 @@ $masthead_args = [
 			],
 			'content'    => '<div class="show-for-sr">Open Menu</div><div class="icon-wrapper">' . $navicon . '</div>',
 		],
-		'navs'              => [
+		'navs'          => [
 			'children' => [ 'nav-primary' ],
 		],
-		'nav-primary'       => [
+		'nav-primary'   => [
 			'atom'      => 'Menu',
 			'menu_args' => [
 				'theme_location' => 'primary',
@@ -70,7 +71,7 @@ $masthead_args = [
 ];
 
 $masthead = new CNP\OrganismTemplate( $masthead_args );
-$masthead->getMarkup();
+$masthead->get_markup();
 if ( '' !== $masthead->markup ) {
 	echo $masthead->markup;
 }
