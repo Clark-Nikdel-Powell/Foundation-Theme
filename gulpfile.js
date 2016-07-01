@@ -12,42 +12,6 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var combineMq = require('gulp-combine-mq');
 
-/*var request = require('request');
- var path = require( 'path' );
- var criticalcss = require("criticalcss");
- var fs = require('fs');
- var tmpDir = require('os').tmpdir();
-
- gulp.task( 'inline-critical-css', function() {
-
- var cssUrl = 'http://sfsc.dev/wp-content/themes/sfsc_arts/assets/css/styles.css';
- var cssPath = path.join( tmpDir, 'styles.css' );
- request(cssUrl).pipe(fs.createWriteStream(cssPath)).on('close', function() {
- criticalcss.getRules(cssPath, function(err, output) {
- if (err) {
- throw new Error(err);
- } else {
- criticalcss.findCritical(
- "http://localhost:3000/",
- {
- rules: JSON.parse(output),
- ignoreConsole: true
- },
- function(err, output) {
- if (err) {
- throw new Error(err);
- } else {
- fs.writeFileSync( './assets/css/critical.css', output );
- //console.log(output);
- console.log('Critical Complete');
- }
- }
- );
- }
- });
- });
- });*/
-
 /*——————————————————————————————————————————————————————————
  /  Commands
  ——————————————————————————————————————————————————————————*/
@@ -62,8 +26,8 @@ var combineMq = require('gulp-combine-mq');
  *
  * @since 0.1.0
  */
-gulp.task('build-scripts', function() {
-    return streamqueue({ objectMode: true },
+gulp.task('build-scripts', function () {
+    return streamqueue({objectMode: true},
         // gulp.src('./node_modules/fg-loadcss/src/loadCSS.js'),
         gulp.src('./node_modules/foundation-sites/dist/foundation.js'),
         gulp.src('./node_modules/slick-carousel/slick/slick.js'),
@@ -85,8 +49,6 @@ gulp.task('build-scripts', function() {
         .pipe(browserSync.stream());
 });
 
-// 18QqWxA14sQc
-
 /**
  * @summary Build Styles.
  *
@@ -98,7 +60,7 @@ gulp.task('build-scripts', function() {
  *
  * @since 0.1.0
  */
-gulp.task('build-styles', function() {
+gulp.task('build-styles', function () {
 
     gulp.src(['./assets/css/pre/styles.scss', './assets/css/pre/print.scss', './assets/css/pre/editor-style.scss'])
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
@@ -126,7 +88,7 @@ gulp.task('build-styles', function() {
  *
  * @param proxy The local site domain.
  */
-gulp.task('watch', function() {
+gulp.task('watch', function () {
 
     browserSync.init({
         proxy: "http://localsite.dev"
