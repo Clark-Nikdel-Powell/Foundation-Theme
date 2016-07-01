@@ -25,7 +25,7 @@
             "lib/cnp/pattern-library/includes.php",
             "lib/cnp/php-utilities/utility-functions.php",
             "lib/cnp/wp-nav-filters/nav-filters.php",
-            "lib/cnp/wp-theme-hooks/wp-theme-wrapper.php",
+            "lib/cnp/wp-theme-wrapper/wp-theme-wrapper.php",
             "lib/cnp/wp-theme-hooks/wp-theme-hooks.php",
             "lib/cnp/wp-get-content-template-array/wp-get-content-template-array.php",
             "lib/cnp/wp-filter-title-tag/wp-filter-title-tag.php",
