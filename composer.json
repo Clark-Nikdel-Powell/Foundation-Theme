@@ -8,6 +8,30 @@
         "cnp/wp-nav-filters": "0.*",
         "cnp/wp-queried-object-parser": "0.*",
         "cnp/wp-atom-builder": "0.*",
-        "cnp/pattern-library": "0.*"
+        "cnp/pattern-library": "0.*",
+        "cnp/wp-theme-wrapper": "*",
+        "cnp/wp-theme-hooks": "*",
+        "cnp/wp-get-content-template-array": "*",
+        "cnp/wp-filter-title-tag": "*",
+        "cnp/wp-filter-add-acf-organisms-to-content": "*",
+        "cnp/wp-filter-add-flex-layout-label-to-title-bar": "*",
+        "cnp/wp-filter-screen-reader-class": "*"
+    },
+    "autoload": {
+        "files": [
+            "lib/cnp/wp-queried-object-parser/queried-object-parser.php",
+            "lib/cnp/wp-highest-ancestor/highest-ancestor.php",
+            "lib/cnp/wp-atom-builder/cnp-atom-builder.php",
+            "lib/cnp/pattern-library/includes.php",
+            "lib/cnp/php-utilities/utility-functions.php",
+            "lib/cnp/wp-nav-filters/nav-filters.php",
+            "lib/cnp/wp-theme-hooks/wp-theme-wrapper.php",
+            "lib/cnp/wp-theme-hooks/wp-theme-hooks.php",
+            "lib/cnp/wp-get-content-template-array/wp-get-content-template-array.php",
+            "lib/cnp/wp-filter-title-tag/wp-filter-title-tag.php",
+            "lib/cnp/wp-filter-add-acf-organisms-to-content/wp-filter-add-acf-organisms-to-content.php",
+            "lib/cnp/wp-filter-add-flex-layout-label-to-title-bar/wp-filter-add-flex-layout-label-to-title-bar.php",
+            "lib/cnp/wp-filter-screen-reader-class/wp-filter-screen-reader-class.php"
+        ]
     }
 }
