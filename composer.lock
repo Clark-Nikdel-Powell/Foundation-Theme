@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c437fe61458b534eb3c201e8901dabcd",
-    "content-hash": "ce667200801c6daac973e0e41d74dd5e",
+    "hash": "b2c12bc6579ea98ce86ba785001a5b1c",
+    "content-hash": "ccad4b052f1147c193a4ad2fc3ac34c6",
     "packages": [
         {
             "name": "cnp/pattern-library",
-            "version": "v0.14.6",
+            "version": "v0.14.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Clark-Nikdel-Powell/Pattern-Library.git",
-                "reference": "c35fc2453cab8b63509eb15f38a5d7939512fc2f"
+                "reference": "5b8a9a8aa8b7328db9ff0683c94d4dcdd5ef883e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Pattern-Library/zipball/c35fc2453cab8b63509eb15f38a5d7939512fc2f",
-                "reference": "c35fc2453cab8b63509eb15f38a5d7939512fc2f",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Pattern-Library/zipball/5b8a9a8aa8b7328db9ff0683c94d4dcdd5ef883e",
+                "reference": "5b8a9a8aa8b7328db9ff0683c94d4dcdd5ef883e",
                 "shasum": ""
             },
             "require": {
@@ -39,7 +39,7 @@
             ],
             "description": "Stack atoms and molecules faster by using named atoms and structure arrays.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Pattern-Library",
-            "time": "2016-06-27 18:46:12"
+            "time": "2016-07-01 18:17:19"
         },
         {
             "name": "cnp/php-utilities",
@@ -108,6 +108,176 @@
             "description": "Build filterable atomic elements.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Atom-Builder",
             "time": "2016-06-20 15:50:15"
+        },
+        {
+            "name": "cnp/wp-filter-add-acf-organisms-to-content",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Clark-Nikdel-Powell/WP-Filter-Add-ACF-Organisms-to-Content.git",
+                "reference": "bdacb6d89494562847ab89ac727c369a8300ff00"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/WP-Filter-Add-ACF-Organisms-to-Content/zipball/bdacb6d89494562847ab89ac727c369a8300ff00",
+                "reference": "bdacb6d89494562847ab89ac727c369a8300ff00",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Nederveld",
+                    "email": "joshn@clarknikdelpowell.com",
+                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Appends flex layout markup to the_content",
+            "homepage": "https://github.com/Clark-Nikdel-Powell/WP-Filter-Add-ACF-Organisms-to-Content",
+            "time": "2016-06-30 20:08:06"
+        },
+        {
+            "name": "cnp/wp-filter-add-flex-layout-label-to-title-bar",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Clark-Nikdel-Powell/WP-Filter-Add-Flex-Layout-Label-to-Title-Bar.git",
+                "reference": "75fa87d03a2d02960fd4dd9b13b799fed59a4e8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/WP-Filter-Add-Flex-Layout-Label-to-Title-Bar/zipball/75fa87d03a2d02960fd4dd9b13b799fed59a4e8e",
+                "reference": "75fa87d03a2d02960fd4dd9b13b799fed59a4e8e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Nederveld",
+                    "email": "joshn@clarknikdelpowell.com",
+                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds a label to collapsed ACF flex layout fields.",
+            "homepage": "https://github.com/Clark-Nikdel-Powell/WP-Filter-Add-Flex-Layout-Label-to-Title-Bar",
+            "time": "2016-06-30 19:59:20"
+        },
+        {
+            "name": "cnp/wp-filter-screen-reader-class",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Clark-Nikdel-Powell/WP-Filter-Screen-Reader-Class.git",
+                "reference": "d885c3a496790f35b111ba91c6a69a6d4a9912c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/WP-Filter-Screen-Reader-Class/zipball/d885c3a496790f35b111ba91c6a69a6d4a9912c5",
+                "reference": "d885c3a496790f35b111ba91c6a69a6d4a9912c5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Nederveld",
+                    "email": "joshn@clarknikdelpowell.com",
+                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Changes the WordPress screen reader class to the Foundation screen reader class",
+            "homepage": "https://github.com/Clark-Nikdel-Powell/WP-Filter-Screen-Reader-Class",
+            "time": "2016-06-30 20:13:06"
+        },
+        {
+            "name": "cnp/wp-filter-title-tag",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Clark-Nikdel-Powell/WP-Filter-Title-Tag.git",
+                "reference": "350f4e4eeed0cf8c7b2e239d0dd9c389147b94fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/WP-Filter-Title-Tag/zipball/350f4e4eeed0cf8c7b2e239d0dd9c389147b94fa",
+                "reference": "350f4e4eeed0cf8c7b2e239d0dd9c389147b94fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Nederveld",
+                    "email": "joshn@clarknikdelpowell.com",
+                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds the site name and/or description to the WP Title",
+            "homepage": "https://github.com/Clark-Nikdel-Powell/WP-Filter-Title-Tag",
+            "time": "2016-06-30 20:22:54"
+        },
+        {
+            "name": "cnp/wp-get-content-template-array",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Clark-Nikdel-Powell/WP-Get-Content-Template-Array.git",
+                "reference": "fe327e79220fc38dc82dde76c31bf124e2ada460"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/WP-Get-Content-Template-Array/zipball/fe327e79220fc38dc82dde76c31bf124e2ada460",
+                "reference": "fe327e79220fc38dc82dde76c31bf124e2ada460",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Nederveld",
+                    "email": "joshn@clarknikdelpowell.com",
+                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Get the template array for content files.",
+            "homepage": "https://github.com/Clark-Nikdel-Powell/WP-Get-Content-Template-Array",
+            "time": "2016-06-30 19:38:53"
         },
         {
             "name": "cnp/wp-highest-ancestor",
@@ -210,6 +380,74 @@
             "description": "Provides shorthand access to a standard description of the WordPress object being requested.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Module-WP-Queried-Object-Parser",
             "time": "2016-03-22 20:05:09"
+        },
+        {
+            "name": "cnp/wp-theme-hooks",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Clark-Nikdel-Powell/WP-Theme-Hooks.git",
+                "reference": "a98dc2fecdb849588112825762ee45e9d8fc528a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/WP-Theme-Hooks/zipball/a98dc2fecdb849588112825762ee45e9d8fc528a",
+                "reference": "a98dc2fecdb849588112825762ee45e9d8fc528a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Nederveld",
+                    "email": "joshn@clarknikdelpowell.com",
+                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Build contextual action names",
+            "homepage": "https://github.com/Clark-Nikdel-Powell/WP-Theme-Hooks",
+            "time": "2016-06-30 19:41:32"
+        },
+        {
+            "name": "cnp/wp-theme-wrapper",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Clark-Nikdel-Powell/WP-Theme-Wrapper.git",
+                "reference": "f51060034d1b45041f2a909708f2608dd8053c9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/WP-Theme-Wrapper/zipball/f51060034d1b45041f2a909708f2608dd8053c9a",
+                "reference": "f51060034d1b45041f2a909708f2608dd8053c9a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Nederveld",
+                    "email": "joshn@clarknikdelpowell.com",
+                    "homepage": "https://clarknikdelpowell.com/agency/people/josh",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A wrapper function that intercepts WordPress' template_include function, allowing us to use base.php instead.",
+            "homepage": "https://github.com/Clark-Nikdel-Powell/WP-Theme-Wrapper",
+            "time": "2016-06-30 19:52:03"
         }
     ],
     "packages-dev": [],
