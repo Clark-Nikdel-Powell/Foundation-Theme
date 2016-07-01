@@ -120,6 +120,7 @@ $vr-medium: scut-rem( map_get($vertical-rhythm-map, 'medium') );
 /  3.2 FOUNDATION
 ——————————————————————————————————————————————————————————*/
 
+$grid-row-width: $global-width;
 // These values are halved.
 $grid-column-gutter: (
 	small: 24px,
