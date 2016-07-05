@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en-US">
 <?php
 get_template_part( 'partials/head' );
 ?>
