@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "cnp/pattern-library",
-            "version": "v0.14.7.1",
+            "version": "v0.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Clark-Nikdel-Powell/Pattern-Library.git",
-                "reference": "5b8a9a8aa8b7328db9ff0683c94d4dcdd5ef883e"
+                "reference": "365e65a4e970d7be3193682f82c8356e0fa3d466"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Pattern-Library/zipball/5b8a9a8aa8b7328db9ff0683c94d4dcdd5ef883e",
-                "reference": "5b8a9a8aa8b7328db9ff0683c94d4dcdd5ef883e",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Pattern-Library/zipball/365e65a4e970d7be3193682f82c8356e0fa3d466",
+                "reference": "365e65a4e970d7be3193682f82c8356e0fa3d466",
                 "shasum": ""
             },
             "require": {
@@ -39,7 +39,7 @@
             ],
             "description": "Stack atoms and molecules faster by using named atoms and structure arrays.",
             "homepage": "https://github.com/Clark-Nikdel-Powell/Pattern-Library",
-            "time": "2016-07-01 18:17:19"
+            "time": "2016-07-05 14:24:43"
         },
         {
             "name": "cnp/php-utilities",
