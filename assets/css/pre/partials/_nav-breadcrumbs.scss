@@ -1,0 +1,86 @@
+/*——————————————————————————————————————————————————————————————————————————————
+/  Breadcrumbs
+——————————————————————————————————————————————————————————————————————————————*/
+.breadcrumbs {
+	$module-prefix: '.breadcrumbs';
+
+	@include vertical_rhythm(line-height, 1);
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+
+	@include css_by_breakpoint((
+		small: (
+			flex-direction: row-reverse,
+			justify-content: flex-end,
+		),
+		default: (
+			font-size: scut-em(14),
+		),
+		medium: (
+			font-size: scut-em(16),
+		),
+	));
+
+	&__crumb {
+		@include font-smoothing(off);
+		min-width: 0;
+		flex: 0 0 auto;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+
+		@include css_by_breakpoint((
+			default: (
+				color: rgba(#fff, .9),
+			),
+			medium: (
+				color: rgba(#fff, .75)
+			),
+		));
+
+		&.current {
+			color: #ffffff;
+
+			@include css_by_breakpoint((
+				small: (
+					display: none,
+				),
+			));
+		}
+	}
+	&__separator {
+		flex: 0 0 auto;
+		height: 1em;
+		line-height: 1em;
+
+		@include css_by_breakpoint((
+			small: (
+				margin-left: .5em,
+				margin-right: .5em,
+				transform: rotateY(180deg),
+			),
+			medium: (
+				margin-left: 1em,
+				margin-right: 1em,
+			),
+		));
+
+		&:nth-last-child(2) {
+
+			@include css_by_breakpoint((
+				small: (
+					display: none,
+				),
+			));
+		}
+	}
+	a {
+		display: block;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

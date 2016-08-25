@@ -2,7 +2,7 @@
 if ( function_exists( 'HAG_Breadcrumbs' ) ) {
 
 	$wrapper_class = CNP\Utility::get_classes( 'breadcrumbs', 'cnp_breadcrumbs_wrapper' );
-	$crumb_class = CNP\Utility::get_classes( 'breadcrumbs', 'cnp_breadcrumbs_crumb' );
+	$crumb_class = CNP\Utility::get_classes( 'crumb', 'cnp_breadcrumbs_crumb' );
 
 	$args = array(
 		'prefix'          => '',
