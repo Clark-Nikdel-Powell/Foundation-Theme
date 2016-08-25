@@ -28,19 +28,15 @@ var combineMq = require('gulp-combine-mq');
  */
 gulp.task('build-scripts', function () {
     return streamqueue({objectMode: true},
-        // gulp.src('./node_modules/fg-loadcss/src/loadCSS.js'),
         gulp.src('./node_modules/foundation-sites/dist/foundation.js'),
         gulp.src('./node_modules/slick-carousel/slick/slick.js'),
-        gulp.src('./node_modules/waypoints/lib/jquery.waypoints.js'),
-        gulp.src('./node_modules/vide/dist/jquery.vide.js'),
-        gulp.src('./node_modules/mixitup/src/jquery.mixitup.js'),
-        gulp.src('./node_modules/fuse.js/src/fuse.js'),
         //gulp.src('./node_modules/foundation-sites/js/foundation.core.js'),
         //gulp.src('./node_modules/foundation-sites/js/foundation.util.mediaQuery.js'),
         //gulp.src('./node_modules/foundation-sites/js/foundation.tabs.js'),
         //gulp.src('./node_modules/foundation-sites/js/foundation.util.keyboard.js'),
         //gulp.src('./node_modules/foundation-sites/js/foundation.util.timerAndImageLoader.js'),
-        gulp.src('./assets/js/pre/**/*.js')
+        gulp.src('./assets/js/pre/vendor/*.js'),
+        gulp.src('./assets/js/pre/*.js')
     )
         .pipe(concat('site.min.js'))
         .pipe(gulp.dest('./assets/js'))
@@ -62,7 +58,7 @@ gulp.task('build-scripts', function () {
  */
 gulp.task('build-styles', function () {
 
-    gulp.src(['./assets/css/pre/styles.scss', './assets/css/pre/print.scss', './assets/css/pre/editor-style.scss'])
+    gulp.src(['./assets/css/pre/styles.scss', './assets/css/pre/print.scss', './assets/css/pre/editor-style.scss', './assets/css/pre/styles.critical.scss'])
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(combineMq({
             beautify: false

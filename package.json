@@ -20,8 +20,11 @@
   "devDependencies": {
     "foundation-sites": "^6.0",
     "slick-carousel": "kenwheeler/slick",
-    "cnp-scss-snippets" : "*",
+    "cnp-scss-snippets": "*",
+    "cnp-load-typekit-fonts": "*",
+    "jacket": "Clark-Nikdel-Powell/jacket",
     "scut": "davidtheclark/scut",
+    "vide": "VodkaBears/Vide",
     "gulp": "*",
     "browser-sync": "*",
     "streamqueue": "*",

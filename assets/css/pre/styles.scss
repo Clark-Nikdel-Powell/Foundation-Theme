@@ -50,15 +50,6 @@
 @import 'partials/content-styles';
 
 /*——————————————————————————————————————————
-/  Modules
-——————————————————————————————————————————*/
-
-@import 'organisms/acf-header';
-@import 'organisms/acf-blurblist';
-@import 'organisms/acf-map';
-@import 'organisms/acf-gallery';
-
-/*——————————————————————————————————————————
 /  Partials
 ——————————————————————————————————————————*/
 
@@ -66,12 +57,27 @@
 @import 'partials/icons';
 @import 'partials/header';
 @import 'partials/header-section';
+@import 'partials/nav-breadcrumbs';
 @import 'partials/sidebar';
 @import 'partials/subnav';
 @import 'partials/footer';
 @import 'partials/nav-social';
 @import 'partials/advanced-responsive-video-embedder';
 @import 'partials/content-sources';
+
+/*——————————————————————————————————————————
+/  Organisms
+——————————————————————————————————————————*/
+
+@import 'organisms/acf-blurb';
+@import 'organisms/acf-blurblist';
+@import 'organisms/acf-gallery';
+@import 'organisms/acf-header';
+@import 'organisms/acf-map';
+@import 'organisms/acf-post-list';
+@import 'organisms/acf-slideshow';
+@import 'organisms/acf-tabs';
+@import 'organisms/event-list';
 
 /*——————————————————————————————————————————
 /  Layouts

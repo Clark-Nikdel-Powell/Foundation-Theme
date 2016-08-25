@@ -13,8 +13,6 @@
         "cnp/wp-theme-hooks": "*",
         "cnp/wp-get-content-template-array": "*",
         "cnp/wp-filter-title-tag": "*",
-        "cnp/wp-filter-add-acf-organisms-to-content": "*",
-        "cnp/wp-filter-add-flex-layout-label-to-title-bar": "*",
         "cnp/wp-filter-screen-reader-class": "*"
     },
     "autoload": {
@@ -29,8 +27,6 @@
             "lib/cnp/wp-theme-hooks/wp-theme-hooks.php",
             "lib/cnp/wp-get-content-template-array/wp-get-content-template-array.php",
             "lib/cnp/wp-filter-title-tag/wp-filter-title-tag.php",
-            "lib/cnp/wp-filter-add-acf-organisms-to-content/wp-filter-add-acf-organisms-to-content.php",
-            "lib/cnp/wp-filter-add-flex-layout-label-to-title-bar/wp-filter-add-flex-layout-label-to-title-bar.php",
             "lib/cnp/wp-filter-screen-reader-class/wp-filter-screen-reader-class.php"
         ]
     }
