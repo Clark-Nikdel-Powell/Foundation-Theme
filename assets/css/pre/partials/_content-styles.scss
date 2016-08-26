@@ -52,8 +52,7 @@ a {
 
 .btn {
 
-	&--isGreen {
-		@include btn(#fff, $green, $green-dark);
+	&--isColor {
 	}
 }
 
@@ -85,122 +84,67 @@ a {
 /  HEADER STYLES
 ——————————————————————————————————————————————————————————*/
 
-@mixin h1($color: $green-dark) {
+@mixin h1($color: #000) {
 	@extend %f_sans;
 	color: $color;
 	font-weight: $fw-sans-normal;
 	line-height: 1.05;
+}
 
-	@include css_by_breakpoint((
-		default: (
-			font-size: rem-calc(map_fetch($header-sizes, small h1))
-		),
-		medium: (
-			font-size: rem-calc(map_fetch($header-sizes, medium h1))
-		),
-		large: (
-			font-size: rem-calc(map_fetch($header-sizes, large h1)),
-		),
-		xlarge: (
-			font-size: rem-calc(map_fetch($header-sizes, xlarge h1)),
-		)
-	));
+@mixin h2($color: #000) {
+	@extend %f_sans;
+	color: $color;
+	font-weight: $fw-sans-normal;
+	line-height: 1.15;
+}
+
+@mixin h3($color: #000) {
+	@extend %f_serif;
+	color: $color;
+	line-height: 1.2;
+	font-weight: $fw-serif-normal;
+}
+
+@mixin h4($color: #000) {
+	@extend %f_sans;
+	color: $color;
+	font-weight: $fw-sans-normal;
+	line-height: 1.25;
+}
+
+@mixin h5($color: #000) {
+	@extend %f_serif;
+	color: $color;
+	line-height: 1.4;
+	font-weight: $fw-serif-normal;
+}
+
+@mixin h6($color: #000) {
+	color: $color;
 }
 
 h1 {
 	@include h1();
 }
 
-@mixin h2($color: $green) {
-	@extend %f_sans;
-	color: $color;
-	font-weight: $fw-sans-normal;
-	line-height: 1.15;
-
-	@include css_by_breakpoint((
-		default: (
-			font-size: rem-calc(map_fetch($header-sizes, small h2))
-		),
-		medium: (
-			font-size: rem-calc(map_fetch($header-sizes, medium h2))
-		),
-		large: (
-			font-size: rem-calc(map_fetch($header-sizes, large h2))
-		),
-	));
-}
-
 h2 {
 	@include h2();
-}
-
-@mixin h3($color: $green) {
-	@extend %f_serif;
-	color: $color;
-	line-height: 1.2;
-	font-weight: $fw-serif-normal;
-
-	@include css_by_breakpoint((
-		default: (
-			font-size: rem-calc(map_fetch($header-sizes, small h3))
-		),
-		medium: (
-			font-size: rem-calc(map_fetch($header-sizes, medium h3))
-		),
-		large: (
-			font-size: rem-calc(map_fetch($header-sizes, large h3))
-		)
-	));
 }
 
 h3 {
 	@include h3();
 }
 
-@mixin h4($color: $green) {
-	@extend %f_sans;
-	color: $color;
-	font-weight: $fw-sans-normal;
-	line-height: 1.25;
-
-	@include css_by_breakpoint((
-		default: (
-			font-size: rem-calc(map_fetch($header-sizes, small h4))
-		),
-		medium: (
-			font-size: rem-calc(map_fetch($header-sizes, medium h4))
-		),
-		large: (
-			font-size: rem-calc(map_fetch($header-sizes, large h4))
-		)
-	));
-}
-
 h4 {
 	@include h4();
 }
 
-@mixin h5($color: $green) {
-	@extend %f_serif;
-	color: $color;
-	line-height: 1.4;
-	font-weight: $fw-serif-normal;
-
-	@include css_by_breakpoint((
-		default: (
-			font-size: rem-calc(map_fetch($header-sizes, small h5))
-		),
-		medium: (
-			font-size: rem-calc(map_fetch($header-sizes, medium h5))
-		),
-		large: (
-			font-size: rem-calc(map_fetch($header-sizes, large h5))
-		)
-	));
-}
-
 h5 {
 	@include h5();
+}
+
+h6 {
+	@include h6();
 }
 
 /*——————————————————————————————————————————————————————————————————————————————
@@ -210,8 +154,10 @@ h5 {
 // .postcontent and the editor styles.
 @mixin content_styles() {
 
+	@include set_responsive_font_sizes_and_line_heights_by_group($header-sizes-and-line-heights);
+
 	h1, h2, h3, h4, h5, h6 {
-		@include responsive_vertical_rhythm(padding-top, 1);
+		@include responsive_vertical_rhythm(margin-top, 1);
 	}
 	h2 {
 	}
@@ -220,25 +166,39 @@ h5 {
 	h4 {
 	}
 	p, ul, ol {
-		@include responsive_vertical_rhythm(margin-top, 1);
+		@include vertical_rhythm(margin-bottom, 1);
+
+		// This is doubling up a bit-- just for the font-size on the other tags.
+		@include set_responsive_font_sizes_and_line_heights_by_tag($header-sizes-and-line-heights, p);
 	}
 	p {
-	}
-	ul, ol {
-		padding-left: 1.25rem;
 	}
 	ul ul,
 	ul ol,
 	ol ul,
 	ol ol {
-		margin-bottom: 0;
+		@include vertical_rhythm(margin-top, 0);
 	}
 	li {
+		@include vertical_rhythm(margin-bottom, 1);
+	}
+	ul {
+		margin-left: 1.25rem;
+	}
+
+	a:not([class]) {
+		color: $green;
+		border-bottom: 1px solid $green;
+
+		&:hover {
+			border-bottom-color: $gold;
+			color: $gold;
+		}
 	}
 }
 
 .postcontent {
-	@include content_styles;
+	@include content_styles();
 
 	> *:first-child {
 		margin-top: 0;

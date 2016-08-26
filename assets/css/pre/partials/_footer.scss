@@ -9,8 +9,8 @@
 	——————————————————————————————————————————————————————————*/
 	&__bottom {
 		@include color_bar(#000);
-		@include responsive_vertical_rhythm(padding-top, 1);
-		@include responsive_vertical_rhythm(padding-bottom, 1);
+		@include vertical_rhythm(padding-top, 1);
+		@include vertical_rhythm(padding-bottom, 1);
 		display: flex;
 
 		@include css_by_breakpoint((
