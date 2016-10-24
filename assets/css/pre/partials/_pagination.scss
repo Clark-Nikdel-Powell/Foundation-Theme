@@ -1,0 +1,50 @@
+.pagination {
+
+	.nav-links {
+
+	}
+	.page-numbers {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: .25em;
+		padding: .75em 1em;
+		font-weight: $fw-sans-bold;
+		line-height: 1;
+		background-color: $color-f5;
+		//color: $color-bd;
+		font-size: 16px;
+		font-feature-settings: "lnum";
+
+		&:hover {
+			//background-color: $teal;
+			color: #ffffff;
+		}
+
+		&.current {
+			//background-color: $color-48;
+			color: #ffffff;
+			cursor: default;
+
+			&:hover {
+				//background-color: $color-48;
+			}
+		}
+		&.dots {
+			padding: .75em .25em;
+			background-color: transparent;
+			//color: $color-bd;
+			cursor: default;
+
+			&:hover {
+				background-color: transparent;
+				//color: $color-48;
+			}
+		}
+		&.prev {
+
+		}
+		&.next {
+
+		}
+	}
+}
