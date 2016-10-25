@@ -15,14 +15,14 @@ $masthead_args = [
 		],
 		'nav-secondary' => [
 			'atom'      => 'Menu',
-			'menu_args' => [
+			'menu-args' => [
 				'theme_location' => 'secondary',
 			],
 		],
 		'nav-social'    => [
 			'class'     => [ 'nav-social' ],
 			'atom'      => 'Menu',
-			'menu_args' => [
+			'menu-args' => [
 				'theme_location' => 'social',
 			],
 		],
@@ -63,7 +63,7 @@ $masthead_args = [
 		],
 		'nav-primary'   => [
 			'atom'      => 'Menu',
-			'menu_args' => [
+			'menu-args' => [
 				'theme_location' => 'primary',
 			],
 		],

@@ -22,7 +22,7 @@ $footer_args = [
 				],
 				'copyright-menu' => [
 					'atom'      => 'Menu',
-					'menu_args' => [
+					'menu-args' => [
 						'theme_location' => 'copyright',
 					],
 				],
@@ -30,7 +30,7 @@ $footer_args = [
 		],
 		'nav-social' => [
 			'atom'      => 'Menu',
-			'menu_args' => [
+			'menu-args' => [
 				'theme_location' => 'social',
 			],
 			'class'     => [ 'nav-social' ],
