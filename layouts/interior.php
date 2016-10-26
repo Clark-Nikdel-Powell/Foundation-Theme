@@ -21,8 +21,8 @@ class Interior {
 
 	public static function hook_wordpress() {
 		add_filter( 'body_class', [ __CLASS__, 'body_class' ], 20, 1 );
-		add_action( 'cnp_after_header', [ __CLASS__, 'get_header_int' ], 20 );
-		add_filter( 'cnp_content_class', [ __CLASS__, 'content_class' ], 20, 1 );
+		add_action( 'cnp_before_wrapper_div', [ __CLASS__, 'get_header_int' ], 20 );
+		add_filter( 'cnp_content_div_classes', [ __CLASS__, 'content_class' ], 20, 1 );
 		add_action( 'cnp_after_loop', [ __CLASS__, 'pagination' ], 20 );
 		add_filter( 'cnp_after_content_div', [ __CLASS__, 'get_sidebar' ], 20, 1 );
 	}
