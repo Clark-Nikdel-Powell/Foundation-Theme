@@ -8,8 +8,10 @@ add_action( 'wp_enqueue_scripts', function () {
 	// Deregister Scripts
 	wp_deregister_script( 'jquery' );
 
+	$cdn = CNP\Utility::cdn_jquery( '1.12.3' );
+
 	// Register Scripts
-	wp_register_script( 'jquery', 'https://code.jquery.com/jquery-1.12.3.min.js', false, null, true );
+	wp_register_script( 'jquery', $cdn, false, null, true );
 	wp_register_script( 'cnp-site', get_template_directory_uri() . '/assets/js/site.min.js', array( 'jquery' ), false, true );
 	//wp_register_script( 'google-maps', '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), false, true );
 
@@ -27,8 +29,6 @@ add_action( 'wp_enqueue_scripts', function () {
 	// Enqueue Styles
 	wp_enqueue_style( 'cnp-css-screen' );
 	wp_enqueue_style( 'cnp-css-print' );
-
-	wp_dequeue_style( 'advanced-responsive-video-embedder' );
 
 } );
 
