@@ -31,8 +31,11 @@
     "gulp-concat": "*",
     "gulp-uglify": "*",
     "gulp-sass": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-combine-mq": "*"
+    "autoprefixer": "*",
+    "gulp-combine-mq": "*",
+    "gulp-postcss": "*",
+    "postcss-inline-svg": "*",
+    "cssnano": "*"
   },
   "private": true,
   "license": "MIT"

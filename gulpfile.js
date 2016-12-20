@@ -2,6 +2,11 @@
  /  Plugins
  ——————————————————————————————————————————————————————————*/
 
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var inline_svg = require('postcss-inline-svg');
+var cssnano = require('cssnano');
+
 var gulp = require('gulp');
 
 var browserSync = require('browser-sync').create();
@@ -58,15 +63,20 @@ gulp.task('build-scripts', function () {
  */
 gulp.task('build-styles', function () {
 
+    var processors = [
+        autoprefixer({browsers: ['last 1 version']}),
+        inline_svg(),
+        cssnano({
+            mergeLonghand: false
+        })
+    ];
+
     gulp.src(['./assets/css/pre/styles.scss', './assets/css/pre/print.scss', './assets/css/pre/editor-style.scss', './assets/css/pre/styles.critical.scss'])
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(combineMq({
             beautify: false
         }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
+        .pipe(postcss(processors))
         .pipe(gulp.dest('./assets/css'))
         .pipe(browserSync.stream());
 
