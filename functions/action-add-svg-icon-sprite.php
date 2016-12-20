@@ -8,4 +8,4 @@ namespace CNP;
 function add_svg_icon_sprite() {
 	// include_once( get_template_directory() . '/assets/img/icons/icon-sprite.svg' );
 }
-add_action( 'wp_head', 'CNP\add_svg_icon_sprite', 20 );
+add_action( 'cnp_before_webpage_div', 'CNP\add_svg_icon_sprite', 20 );
