@@ -55,35 +55,35 @@
 
 @import 'partials/visibility-classes';
 @import 'partials/icons';
-@import 'partials/header';
-@import 'partials/header-section';
-@import 'partials/nav-breadcrumbs';
+@import '../../../ui/header-masthead/header-masthead';
+@import '../../../ui/header-section/header-section';
+@import '../../../ui/nav-breadcrumbs/nav-breadcrumbs';
 @import 'partials/sidebar';
-@import 'partials/subnav';
-@import 'partials/footer';
-@import 'partials/nav-social';
+@import '../../../ui/subnav/subnav';
+@import '../../../ui/footer/footer';
+@import '../../../ui/nav-social/nav-social';
 @import 'partials/advanced-responsive-video-embedder';
 @import 'partials/content-sources';
-@import 'partials/pagination';
+@import '../../../ui/pagination/pagination';
 
 /*——————————————————————————————————————————
 /  Organisms
 ——————————————————————————————————————————*/
 
-@import 'organisms/acf-blurb';
-@import 'organisms/acf-blurblist';
-@import 'organisms/acf-gallery';
-@import 'organisms/acf-header';
-@import 'organisms/acf-map';
-@import 'organisms/acf-post-list';
-@import 'organisms/acf-slideshow';
-@import 'organisms/acf-tabs';
+@import '../../../ui/acf-blurb/acf-blurb';
+@import '../../../ui/acf-blurblist/acf-blurblist';
+@import '../../../ui/acf-gallery/acf-gallery';
+@import '../../../ui/acf-header/acf-header';
+@import '../../../ui/acf-map/acf-map';
+@import '../../../ui/acf-post-list/acf-post-list';
+@import '../../../ui/acf-slideshow/acf-slideshow';
+@import '../../../ui/acf-tabs/acf-tabs';
 @import 'organisms/event-list';
 
 /*——————————————————————————————————————————
 /  Layouts
 ——————————————————————————————————————————*/
 
-@import 'layouts/default';
-@import 'layouts/front-page';
-@import 'layouts/interior';
+@import '../../../ui/default/default';
+@import '../../../ui/front-page/front-page';
+@import '../../../ui/interior/interior';
