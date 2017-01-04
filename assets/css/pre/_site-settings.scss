@@ -72,7 +72,7 @@ $body-color: #555;
 /  1.2 FOUNDATION
 ——————————————————————————————————————————————————————————*/
 
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1200); // The actual row width comes from $grid-row-width, set in Grid, Section 3.2, below. It defaults to $global-width.
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-font-color: $body-color;
 
