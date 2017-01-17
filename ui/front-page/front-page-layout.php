@@ -1,14 +1,22 @@
 <?php
+/**
+ * Filters and actions for the front-page
+ *
+ * @package CLIENT_NAMESPACE
+ */
+
 namespace CLIENT_NAMESPACE;
 
 /**
  * Class FrontPage
- * @package CLIENT_NAMESPACE
  *
- * Filters and actions for the front-page
+ * @package CLIENT_NAMESPACE
  */
 class FrontPage {
 
+	/**
+	 * Initialize the class.
+	 */
 	public static function init() {
 
 		add_action( 'wp', function () {
@@ -19,8 +27,11 @@ class FrontPage {
 		} );
 	}
 
+	/**
+	 * WordPress hook.
+	 */
 	public static function hook_wordpress() {
-	
+
 	}
 }
 

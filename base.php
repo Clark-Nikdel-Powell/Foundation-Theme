@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-US">
 <?php
-get_template_part( 'partials/head' );
+get_template_part( 'ui/head/head' );
 ?>
 <body <?php body_class(); ?>>
 <?php

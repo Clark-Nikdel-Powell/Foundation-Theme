@@ -12,14 +12,14 @@ namespace CNP;
  */
 function social_menu_icons( $menu_items, $args ) {
 
-	if ( 'social' === $args->menu->slug ) {
+	if ( 'social-menu' === $args->menu->slug || 'social' === $args->theme_location ) {
 
 		foreach ( $menu_items as $item_key => $menu_item ) {
 
 			$title = $menu_item->title;
 			$slug  = str_replace( [ ' ', '&' ], [ '-', 'and' ], strtolower( $title ) );
 
-			$icon = CNP\Utility::get_svg_icon( 'icon-' . $slug );
+			$icon = Utility::get_svg_icon( 'icon-' . $slug );
 
 			$menu_items[ $item_key ]->title = '<span class="icon-wrapper">' . $icon . '</span><span class="title">' . $title . '</span>';
 

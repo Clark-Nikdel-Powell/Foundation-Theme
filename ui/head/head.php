@@ -1,3 +1,11 @@
+<?php
+/**
+ * The site head.
+ *
+ * @package CLIENT_NAMESPACE
+ */
+
+?>
 <head>
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
