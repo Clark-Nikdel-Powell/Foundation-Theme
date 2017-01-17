@@ -2,11 +2,11 @@
 /  Utilities: Functions, Mixins, Extensions
 ——————————————————————————————————————————*/
 
-@import "../../../node_modules/cnp-scss-snippets/import";
-@import "../../../node_modules/cnp-jacket/stylesheets/jacket";
-@import "../../../node_modules/scut/dist/scut";
+@import "../../../../node_modules/cnp-scss-snippets/import";
+@import "../../../../node_modules/cnp-jacket/stylesheets/jacket";
+@import "../../../../node_modules/scut/dist/scut";
 
-@import "utilities/mixins-and-functions";
+@import "../utilities/mixins-and-functions";
 
 /*——————————————————————————————————————————
 /  Foundation Settings
@@ -15,19 +15,19 @@
 //@import "../../../node_modules/foundation-sites/scss/vendor/normalize";
 
 // Sass utilities
-@import "../../../node_modules/foundation-sites/scss/util/util";
+@import "../../../../node_modules/foundation-sites/scss/util/util";
 
-@import "foundation-global";
-@import "foundation-settings";
+@import "settings/foundation-global";
+@import "settings/foundation-settings";
 
 /*——————————————————————————————————————————
 /  Site Settings
 ——————————————————————————————————————————*/
 
-@import "site-settings";
+@import "settings/site-settings";
 
 /*——————————————————————————————————————————
 /  Foundation Components
 ——————————————————————————————————————————*/
 
-@import "../../../node_modules/foundation-sites/scss/foundation";
+@import "../../../../node_modules/foundation-sites/scss/foundation";
