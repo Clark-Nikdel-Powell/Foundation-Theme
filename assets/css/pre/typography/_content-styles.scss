@@ -1,0 +1,229 @@
+@import "../organisms/pt-gravity-forms";
+@import "lists";
+@import "header-tags";
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  CONTENT-SPECIFIC TYPOGRAPHY STYLES
+——————————————————————————————————————————————————————————————————————————————*/
+// Content styles are set up in a mixin so that they can be manually included for
+// .postcontent and the editor styles.
+@mixin content_styles() {
+
+	@include list_styles();
+	@include gravity_form_styles();
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@include vertical_rhythm(margin-top, (1.25, 2));
+		@include vertical_rhythm(margin-bottom, .625);
+	}
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	.editableHD {
+
+		> h1,
+		> h2,
+		> h3,
+		> h4,
+		> h5,
+		> h6 {
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		> :not(hr):last-child {
+			margin-bottom: 0;
+		}
+	}
+	.alignleft,
+	.alignright,
+	.aligncenter,
+	.alignnone {
+
+		+ h1,
+		+ h2,
+		+ h3,
+		+ h4,
+		+ h5,
+		+ h6 {
+			margin-top: 0;
+		}
+	}
+	.h1 {
+		text-align: center;
+	}
+	p,
+	ul,
+	ol,
+	blockquote {
+		@include do_something_over_breakpoints(font-size, 1, $responsive-font-size);
+		@include do_something_over_breakpoints(line-height, 1, $responsive-line-height);
+		@include vertical_rhythm(margin-bottom, 1.25);
+	}
+	.excerpt {
+		@extend %f_sans;
+		color: #3a809c;
+		line-height: 1.5;
+
+		@include css_by_breakpoint((
+			default: (
+				font-size: scut-em(18),
+			),
+			medium: (
+				font-size: scut-em(20),
+			),
+			large: (
+				font-size: scut-em(24),
+			),
+		));
+	}
+	div[id*="attachment"].alignright,
+	div[id*="attachment"].alignleft,
+	.alignright,
+	.alignleft {
+
+		@include css_by_breakpoint((
+			medium: (
+				max-width: 65%,
+			),
+		));
+	}
+	div[id*="attachment"] {
+		@include vertical_rhythm(margin-bottom, 1);
+		max-width: 100%;
+
+		img {
+			width: 100%;
+		}
+		> a {
+			display: block;
+		}
+	}
+	.alignright {
+
+		@include css_by_breakpoint((
+			default: (
+				margin-bottom: $vr-small,
+			),
+			medium: (
+				float: right,
+				margin: .5em 0 1em 2em,
+			),
+		));
+	}
+	.alignleft {
+
+		@include css_by_breakpoint((
+			default: (
+				margin-bottom: $vr-small,
+			),
+			medium: (
+				float: left,
+				margin: .5em 2em 1em 0,
+			),
+		));
+	}
+	.aligncenter {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.wp-caption-text {
+		padding: .75em 1em;
+		background-color: #fff;
+		font-style: italic;
+		line-height: 1.2;
+	}
+	hr {
+		@include vertical_rhythm((margin-top, margin-bottom), (1, 2));
+		height: 1px;
+		border: none;
+		background-color: #d6dbdf;
+
+		&.hr--withShield {
+			@include vertical_rhythm((margin-top, margin-bottom), (2, 3));
+			height: 4px;
+			position: relative;
+			overflow: visible;
+
+			@at-root body.front-end hr.hr--withShield {
+				background-color: #9A97A8;
+			}
+
+			&:before {
+				@extend %pseudo;
+				width: scut-em(56);
+				height: scut-em(56);
+				left: 50%;
+				top: 2px;
+				background-color: #f3f7fa;
+				background-image: url(#{$img_path}/icons/SVG/pt-shield-green.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 65%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+		}
+	}
+	blockquote {
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+		border-left: .25em solid #150A2E;
+
+		@include css_by_breakpoint((
+			default: (
+				padding-left: scut-em(20, 16),
+			),
+			medium: (
+				padding-left: scut-em(30, 18),
+			),
+			large: (
+				padding-left: scut-em(60, 18),
+			),
+		));
+
+		p {
+			@include vertical_rhythm(margin-bottom, .75);
+			@include h2((color:#15082f, include_font_size:true));
+			font-style: italic;
+			line-height: 1.38;
+			text-indent: -.5em;
+		}
+		footer {
+
+		}
+		cite {
+			@include h_smalluppercase((color:$blue-medium, include_fz:false));
+			font-size: 15px;
+			font-style: normal;
+		}
+	}
+
+	a:not([class]) {
+		color: $blue-medium;
+		text-decoration: underline;
+
+		&:hover {
+			color: $mint-dark;
+		}
+	}
+}
+
+.postcontent {
+	@include content_styles();
+}

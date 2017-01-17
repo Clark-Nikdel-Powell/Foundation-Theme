@@ -1,0 +1,160 @@
+@mixin list_styles() {
+	$marker-width: 10;
+	$default-right-margin: 10;
+	$medium-right-margin: 12;
+	ul, ol {
+
+		@include css_by_breakpoint((
+			default: (
+				margin-left: scut-rem(($marker-width + $default-right-margin))
+			),
+			medium: (
+				margin-left: scut-rem(($marker-width + $medium-right-margin))
+			),
+		));
+
+		&.two-column,
+		&.three-column,
+		&.four-column {
+			margin-left: 0;
+
+			@include css_by_breakpoint((
+				medium: (
+					column-gap: scut-rem($medium-grid-column-gutter),
+				),
+				large: (
+					column-gap: scut-rem($large-grid-column-gutter),
+				),
+			));
+
+			li {
+				break-inside: avoid;
+			}
+		}
+		&.two-column {
+
+			@include css_by_breakpoint((
+				medium: (
+					columns: 2,
+				),
+			));
+		}
+		&.three-column {
+
+			@include css_by_breakpoint((
+				medium: (
+					columns: 3,
+				),
+			));
+		}
+		&.four-column {
+
+			@include css_by_breakpoint((
+				medium: (
+					columns: 4,
+				),
+			));
+		}
+	}
+
+	ul ul,
+	ul ol,
+	ol ul,
+	ol ol {
+		@include vertical_rhythm(margin-top, 0);
+	}
+
+	li {
+		//@include vertical_rhythm((margin-top, margin-bottom), (.5, .375));
+		@include vertical_rhythm((margin-bottom), (.5, .375));
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	ul {
+
+	}
+
+	ul li {
+		list-style: none;
+		position: relative;
+
+		&:before {
+			@include do_something_over_breakpoints(height, 1, $responsive-line-height);
+			content: '';
+			display: block;
+			float: left;
+			position: relative;
+			top: -1px;
+			background-image: url(#{$img-path}/icons/SVG/shield-bullet-purple.svg);
+			background-size: 10px 11px;
+			background-position: right center;
+			background-repeat: no-repeat;
+
+			@include css_by_breakpoint((
+				default: (
+					width: scut-rem($marker-width),
+					margin-right: scut-rem($default-right-margin),
+					margin-left: scut-rem(($marker-width + $default-right-margin) * -1)
+				),
+				medium: (
+					width: scut-rem($marker-width),
+					margin-right: scut-rem($medium-right-margin),
+					margin-left: scut-rem(($marker-width + $medium-right-margin ) * -1)
+				),
+			));
+		}
+	}
+	ul.no-shield li {
+		list-style: inherit;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	ol {
+		list-style: none;
+		counter-reset: item;
+	}
+
+	ol li {
+		counter-increment: item;
+
+		@include css_by_breakpoint((
+			default: (
+				margin-left: 24px,
+			),
+			medium: (
+				margin-left: 32px,
+			),
+		));
+
+		&:before {
+			display: block;
+			float: left;
+			content: counter(item) '.';
+			text-align: right;
+
+			@include css_by_breakpoint((
+				default: (
+					width: scut-rem($marker-width),
+					height: 20px,
+					margin-right: scut-rem($default-right-margin),
+					margin-left: scut-rem(($marker-width + $default-right-margin) * -1)
+				),
+				medium: (
+					width: scut-rem($marker-width),
+					height: 30px,
+					margin-right: scut-rem($medium-right-margin),
+					margin-left: scut-rem(($marker-width + $medium-right-margin ) * -1)
+				),
+				large: (
+					height: 40px,
+				),
+			));
+		}
+	}
+}
