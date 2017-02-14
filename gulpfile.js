@@ -33,17 +33,23 @@ var combineMq = require('gulp-combine-mq');
  */
 gulp.task('build-scripts', function () {
     return streamqueue({objectMode: true},
-        gulp.src('./node_modules/foundation-sites/dist/foundation.js'),
-        gulp.src('./node_modules/slick-carousel/slick/slick.js'),
-        //gulp.src('./node_modules/foundation-sites/js/foundation.core.js'),
-        //gulp.src('./node_modules/foundation-sites/js/foundation.util.mediaQuery.js'),
-        //gulp.src('./node_modules/foundation-sites/js/foundation.tabs.js'),
-        //gulp.src('./node_modules/foundation-sites/js/foundation.util.keyboard.js'),
-        //gulp.src('./node_modules/foundation-sites/js/foundation.util.timerAndImageLoader.js'),
-        gulp.src('./assets/js/pre/vendor/*.js'),
-        gulp.src('./assets/js/pre/*.js')
+        gulp.src('./node_modules/foundation-sites/dist/js/foundation.js'),
+        gulp.src('./ui/_required/js/foundation.js'),
+        gulp.src('./ui/_required/js/class-switcher.js')
     )
         .pipe(concat('site.min.js'))
+        .pipe(gulp.dest('./assets/js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./assets/js'))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('build-typekit', function () {
+    return streamqueue({objectMode: true},
+        gulp.src('./node_modules/cnp-load-typekit-fonts/load-typekit-fonts.js'),
+        gulp.src('./ui/_required/js/typekit.js')
+    )
+        .pipe(concat('typekit.min.js'))
         .pipe(gulp.dest('./assets/js'))
         .pipe(uglify())
         .pipe(gulp.dest('./assets/js'))
