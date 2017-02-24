@@ -11,7 +11,7 @@ $search        = new \CNP\TemplateLibrary\Content( 'search', get_search_form( fa
 
 $row_support = new \CNP\TemplateLibrary\Container( 'row-support', [ $nav_secondary, $nav_social, $search ] );
 
-$logo        = new \CNP\TemplateLibrary\Content( 'logo', 'The Logo' );
+$logo        = new \CNP\TemplateLibrary\Logo( 'logo', 'The Logo' );
 $navs_toggle = new \CNP\TemplateLibrary\Link( 'navs-toggle', '#', '<div class="show-for-sr">Open Menu</div><div class="icon-wrapper">' . CNP\Utility::get_svg_icon( 'icon-navicon' ) . '</div>', [ 'data-toggle-class' => 'menu-open', 'data-toggle-target' => 'body' ] );
 
 $nav_primary = new \CNP\TemplateLibrary\Menu( 'nav-primary', [ 'theme_location' => 'primary' ] );
