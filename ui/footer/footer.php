@@ -1,36 +1,12 @@
 <?php
 
-$footer_args = [
-	'name'      => 'footer',
-	'structure' => [
-		'bottom'     => [
-			'children' => [ 'copyright', 'nav-social' ],
-		],
-		'copyright'  => [
-			'parts' => [
-				'copyright-date' => [
-					'content' => '&copy; Copyright ' . date( 'Y' ) . '<br class="show-for-small-only" /> ' . get_bloginfo( 'site_name' ),
-				],
-				'copyright-menu' => [
-					'atom'      => 'Menu',
-					'menu-args' => [
-						'theme_location' => 'copyright',
-					],
-				],
-			],
-		],
-		'nav-social' => [
-			'atom'      => 'Menu',
-			'menu-args' => [
-				'theme_location' => 'social',
-			],
-			'class'     => [ 'nav-social' ],
-		],
-	],
-];
+$copyright_date = new CNP\TemplateLibrary\Content( 'copyright-date', '&copy; Copyright ' . date( 'Y' ) . '<br class="show-for-small-only" /> ' . get_bloginfo( 'site_name' ) );
+$copyright_menu = new CNP\TemplateLibrary\Menu( 'copyright-menu', [ 'theme_location' => 'copyright' ] );
 
-$footer = new CNP\OrganismTemplate( $footer_args );
-$footer->get_markup();
-if ( '' !== $footer->markup ) {
-	echo $footer->markup;
-}
+$copyright  = new CNP\TemplateLibrary\Container( 'copyright', [ $copyright_date, $copyright_menu ] );
+$nav_social = new \CNP\TemplateLibrary\Menu( 'nav-social', [ 'theme_location' => 'social' ] );
+
+$bottom = new CNP\TemplateLibrary\Container( 'bottom', [ $copyright, $nav_social ] );
+
+$footer = new \CNP\TemplateLibrary\Container( 'footer', [ $bottom ], 'footer' );
+echo $footer->get_markup();

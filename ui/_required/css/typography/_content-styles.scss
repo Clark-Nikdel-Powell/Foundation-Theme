@@ -1,4 +1,3 @@
-@import "../organisms/pt-gravity-forms";
 @import "lists";
 @import "header-tags";
 
@@ -10,7 +9,6 @@
 @mixin content_styles() {
 
 	@include list_styles();
-	@include gravity_form_styles();
 
 	h1,
 	h2,
@@ -208,7 +206,6 @@
 
 		}
 		cite {
-			@include h_smalluppercase((color:$blue-medium, include_fz:false));
 			font-size: 15px;
 			font-style: normal;
 		}
