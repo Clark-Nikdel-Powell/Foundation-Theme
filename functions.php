@@ -24,8 +24,8 @@ require_once 'functions/enqueues.php';
  */
 
 // Front-end functions/filters.
-require_once 'functions/action-add-svg-icon-sprite.php';
-require_once 'functions/filter-add-icons-to-social-nav.php';
+require_once 'ui/icons/icons-output-svg-sprites-before-webpage.php';
+require_once 'ui/nav-social/filter-add-icons-to-social-nav.php';
 
 // Layout-Specific Actions/Filters.
 require_once 'ui/default/default-layout.php';

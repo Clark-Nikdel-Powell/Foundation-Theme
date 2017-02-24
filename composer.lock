@@ -43,16 +43,16 @@
         },
         {
             "name": "cnp/template-library",
-            "version": "v0.2.1",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Clark-Nikdel-Powell/Template-Library.git",
-                "reference": "1f9a6b3ee4097e6273f0fc7d5f0b12653317a0b5"
+                "reference": "5c2318236cac855cf866b566fa3041606e21af62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Template-Library/zipball/1f9a6b3ee4097e6273f0fc7d5f0b12653317a0b5",
-                "reference": "1f9a6b3ee4097e6273f0fc7d5f0b12653317a0b5",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Template-Library/zipball/5c2318236cac855cf866b566fa3041606e21af62",
+                "reference": "5c2318236cac855cf866b566fa3041606e21af62",
                 "shasum": ""
             },
             "require-dev": {
@@ -66,7 +66,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2017-02-24 16:29:30"
+            "time": "2017-02-24 17:55:04"
         },
         {
             "name": "cnp/wp-atom-builder",
