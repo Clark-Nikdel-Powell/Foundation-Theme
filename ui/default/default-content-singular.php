@@ -1,9 +1,8 @@
 <?php
+$post_title = new CNP\TemplateLibrary\PostTitle();
+echo $post_title->get_markup();
 
-$singular_header = new CNP\PostHeaderSingular();
-$singular_header->get_markup();
-echo $singular_header->markup;
+$content = new CNP\TemplateLibrary\PostContent();
+echo $content->get_markup();
 
-// Post body.
-the_content();
 edit_post_link( 'Edit this', '<p>', '</p>' );
