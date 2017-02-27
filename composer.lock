@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "942762a8c4a463cff855ebffda4e4ee8",
-    "content-hash": "6a20e045a23570d59332796a5473aa2f",
+    "hash": "d72944c8a4fdddd4f2683324236abe8d",
+    "content-hash": "030039c2429c5e91788ee6fda0c9fc19",
     "packages": [
         {
             "name": "cnp/php-utilities",
@@ -43,16 +43,16 @@
         },
         {
             "name": "cnp/template-library",
-            "version": "v0.3.0",
+            "version": "v0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Clark-Nikdel-Powell/Template-Library.git",
-                "reference": "5c2318236cac855cf866b566fa3041606e21af62"
+                "reference": "333d8ef5f694dd0ffb2c741975a3307c95f9db49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Template-Library/zipball/5c2318236cac855cf866b566fa3041606e21af62",
-                "reference": "5c2318236cac855cf866b566fa3041606e21af62",
+                "url": "https://api.github.com/repos/Clark-Nikdel-Powell/Template-Library/zipball/333d8ef5f694dd0ffb2c741975a3307c95f9db49",
+                "reference": "333d8ef5f694dd0ffb2c741975a3307c95f9db49",
                 "shasum": ""
             },
             "require-dev": {
@@ -66,7 +66,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2017-02-24 17:55:04"
+            "time": "2017-02-24 20:49:35"
         },
         {
             "name": "cnp/wp-atom-builder",
