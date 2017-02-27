@@ -6,7 +6,6 @@ Table of Contents:
    1. Global
    2. Breakpoints
    3. The Grid
-   4. Base Typography
 */
 
 /*——————————————————————————————————————————————————————————————————————————————
@@ -16,6 +15,15 @@ Table of Contents:
 /*——————————————————————————————————————————————————————————
 /  1.1 CNP
 ——————————————————————————————————————————————————————————*/
+
+//——————————————————————————————————————————
+//  Grid Unit
+//——————————————————————————————————————————
+$grid-unit: 8px;
+
+@function g($multiplier: 1) {
+	@return scut-rem($grid-unit * $multiplier);
+}
 
 /*——————————————————————————————————————————
 /  Typography Size Settings
@@ -29,25 +37,60 @@ $responsive-line-height: (
 	small: 22px,
 	medium: 24px,
 	large: 26px,
-	xlarge: 28px,
 );
 
 /*——————————————————————————————————————————
 /  Font Settings
 ——————————————————————————————————————————*/
-$f-sans: "sans-font", Arial, sans-serif;
-%f_sans {
-	font-family: $f-sans;
+$f-special: "Special Font", "Like for Headers";
+%f-special {
+	font-family: $f-special;
 }
-$fw-sans-bold: 700;
-$fw-sans-normal: 400;
 
-$f-serif: "serif-font", Garamond, serif;
-%f_serif {
-	font-family: $f-serif;
+%fw-special-regular {
+	font-weight: 400;
 }
-$fw-serif-bold: 700;
-$fw-serif-normal: 400;
+
+%fw-special-bold {
+	font-weight: 700;
+}
+
+@mixin f-special($fw: '', $include_font_family: true) {
+
+	@if ($include_font_family == true) {
+		font-family: $f-special;
+	}
+	@if ($fw != '') {
+		@extend %fw-special-#{$fw};
+	}
+}
+
+$f-default: "Default font", "Like for Body";
+%f-default {
+	font-family: $f-default;
+}
+
+%fw-default-regular {
+	font-weight: 400;
+}
+
+%fw-default-semibold {
+	font-weight: 600;
+}
+
+%fw-default-bold {
+	font-weight: 700;
+}
+
+@mixin f-default($fw: '', $include_font_family: false) {
+
+	@if ($include_font_family == true) {
+		font-family: $f-default;
+	}
+	@if ($fw != '') {
+		@extend %fw-default-#{$fw};
+	}
+}
 
 /*——————————————————————————————————————————
 /  Path Strings
@@ -58,25 +101,26 @@ $img_path: '#{$theme_path}/assets/img';
 /*——————————————————————————————————————————
 /  Z-Index
 ——————————————————————————————————————————*/
-$global-elements: '';
-$specific-organism-elements: '';
+$z-layers: (
+	"class-name": 1,
+);
 
 /*——————————————————————————————————————————
 /  Colors
 ——————————————————————————————————————————*/
-$light-blue: #b8ebff;
-$dark-blue: #0f4876;
+$blue-b8: #b8ebff;
+$blue-0f: #0f4876;
 $body-color: #555;
 
 /*——————————————————————————————————————————————————————————
 /  1.2 FOUNDATION
 ——————————————————————————————————————————————————————————*/
 
-$global-width: rem-calc(1200); // The actual row width comes from $grid-row-width, set in Grid, Section 3.2, below. It defaults to $global-width.
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$site-width: 1440px;
+$content-width: 1000px;
+
+$body-font-family: $f-default;
 $body-font-color: $body-color;
-
-
 
 /*——————————————————————————————————————————————————————————————————————————————
 /  2. Breakpoints
@@ -86,23 +130,32 @@ $body-font-color: $body-color;
 /  2.1 CNP
 ——————————————————————————————————————————————————————————*/
 
-//
+$cnp-small-grid-row-margin: 10px;
+$cnp-medium-grid-row-margin: $grid-unit * 4;
 
+// The margin is NOT halved.
+$site-margin-map: (
+	small only: $cnp-small-grid-row-margin,
+	medium only: $cnp-medium-grid-row-margin,
+);
 
 /*——————————————————————————————————————————————————————————
 /  2.2 FOUNDATION
 ——————————————————————————————————————————————————————————*/
 
+$medium-breakpoint: 768px;
+$large-breakpoint: $content-width + ($cnp-medium-grid-row-margin * 2);
+$xlarge-breakpoint: 1200px;
+$xxlarge-breakpoint: $site-width;
+
 $breakpoints: (
 	small: 0,
-	medium: 768px,
-	large: 1024px,
-	xlarge: 1200px,
-	xxlarge: 1440px,
+	medium: $medium-breakpoint,
+	large: $large-breakpoint,
+	xlarge: $xlarge-breakpoint,
+	xxlarge: $xxlarge-breakpoint,
 );
-$breakpoint-classes: (small medium large);
-
-
+$breakpoint-classes: (small medium large xlarge);
 
 /*——————————————————————————————————————————————————————————————————————————————
 /  3. The Grid
@@ -112,81 +165,19 @@ $breakpoint-classes: (small medium large);
 /  3.1 CNP
 ——————————————————————————————————————————————————————————*/
 
-// The margin is NOT halved.
-$site-margin-map: (
-	small: 20px,
-	medium: 30px,
-	large: 40px,
-	xlarge: 60px,
-	xxlarge: 140px,
-);
-
-$cnp-small-grid-row-margin: map_get($site-margin-map, 'small');
-$cnp-medium-grid-row-margin: map_get($site-margin-map, 'medium');
-$cnp-large-grid-row-margin: map_get($site-margin-map, 'large');
-$cnp-xlarge-grid-row-margin: map_get($site-margin-map, 'xlarge');
-$cnp-xxlarge-grid-row-margin: map_get($site-margin-map, 'xxlarge');
-
-$vertical-rhythm-map: $responsive-line-height;
-
-$vr-small: scut-rem( map_get($vertical-rhythm-map, 'small') );
-$vr-medium: scut-rem( map_get($vertical-rhythm-map, 'medium') );
-$vr-large: scut-rem( map_get($vertical-rhythm-map, 'large') );
-$vr-xlarge: scut-rem( map_get($vertical-rhythm-map, 'xlarge') );
-
-
 /*——————————————————————————————————————————————————————————
 /  3.2 FOUNDATION
 ——————————————————————————————————————————————————————————*/
 
-$grid-row-width: $global-width;
+$grid-row-width: $content-width;
+
 // These values are halved.
+$small-grid-column-gutter: 20px;
+$medium-grid-column-gutter: 30px;
+$xlarge-grid-column-gutter: 40px;
+
 $grid-column-gutter: (
-	small: 20px,
-	medium: 30px,
-	large: 40px,
+	small: $small-grid-column-gutter,
+	medium: $medium-grid-column-gutter,
+	xlarge: $xlarge-grid-column-gutter,
 );
-
-$small-grid-column-gutter: map_get($grid-column-gutter, 'small');
-$medium-grid-column-gutter: map_get($grid-column-gutter, 'medium');
-$xlarge-grid-column-gutter: map_get($grid-column-gutter, 'xlarge');
-
-
-
-/*——————————————————————————————————————————————————————————————————————————————
-/  4. Base Typography
-——————————————————————————————————————————————————————————————————————————————*/
-
-/*——————————————————————————————————————————————————————————
-/  4.1 CNP
-——————————————————————————————————————————————————————————*/
-
-//
-
-
-/*——————————————————————————————————————————————————————————
-/  4.2 FOUNDATION
-——————————————————————————————————————————————————————————*/
-
-$header-lineheight: 1.4;
-$header-margin-bottom: 0.5rem;
-$header-styles: (
-	small: (
-		'h1': ('font-size': 24),
-		'h2': ('font-size': 20),
-		'h3': ('font-size': 19),
-		'h4': ('font-size': 18),
-		'h5': ('font-size': 17),
-		'h6': ('font-size': 16),
-	),
-	medium: (
-		'h1': ('font-size': 48),
-		'h2': ('font-size': 40),
-		'h3': ('font-size': 31),
-		'h4': ('font-size': 25),
-		'h5': ('font-size': 20),
-		'h6': ('font-size': 16),
-	),
-);
-$paragraph-lineheight: 1.6;
-$paragraph-margin-bottom: 1rem;
