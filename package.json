@@ -33,6 +33,7 @@
     "gulp-sass": "*",
     "autoprefixer": "*",
     "gulp-combine-mq": "*",
+    "multi-brand-colors": "^1.1.2",
     "gulp-postcss": "*",
     "postcss-inline-svg": "*",
     "cssnano": "*"

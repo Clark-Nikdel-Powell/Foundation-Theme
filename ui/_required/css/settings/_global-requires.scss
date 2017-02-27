@@ -3,10 +3,11 @@
 ——————————————————————————————————————————*/
 
 @import "../../../../node_modules/cnp-scss-snippets/import";
-@import "../../../../node_modules/cnp-jacket/stylesheets/jacket";
 @import "../../../../node_modules/scut/dist/scut";
 
 @import "../utilities/mixins-and-functions";
+
+@import '../../../../node_modules/multi-brand-colors/dist/scss/index';
 
 /*——————————————————————————————————————————
 /  Foundation Settings
@@ -17,14 +18,14 @@
 // Sass utilities
 @import "../../../../node_modules/foundation-sites/scss/util/util";
 
-@import "settings/foundation-global";
-@import "settings/foundation-settings";
+@import "../../../../node_modules/foundation-sites/scss/global";
+@import "../../../../node_modules/foundation-sites/scss/settings/settings";
 
 /*——————————————————————————————————————————
 /  Site Settings
 ——————————————————————————————————————————*/
 
-@import "settings/site-settings";
+@import "site-settings";
 
 /*——————————————————————————————————————————
 /  Foundation Components
