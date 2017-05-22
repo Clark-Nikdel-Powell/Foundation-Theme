@@ -13,6 +13,7 @@ var browserSync = require('browser-sync').create();
 var streamqueue = require('streamqueue');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var combineMq = require('gulp-combine-mq');
@@ -77,8 +78,10 @@ gulp.task('build-styles', function () {
         })
     ];
 
-    gulp.src(['./assets/css/pre/styles.scss', './assets/css/pre/print.scss', './assets/css/pre/editor-style.scss', './assets/css/pre/styles.critical.scss'])
+    gulp.src(['./ui/styles.scss', './ui/print.scss', './ui/editor-style.scss', './ui/admin.scss'])
+        .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sourcemaps.write())
         .pipe(combineMq({
             beautify: false
         }))
