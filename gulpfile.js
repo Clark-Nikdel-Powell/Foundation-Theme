@@ -25,10 +25,10 @@ var combineMq = require('gulp-combine-mq');
 /**
  * @summary Build Scripts.
  *
- * Imports the Foundation scripts from the Bower Components directory,
+ * Imports the Foundation scripts from the node_modules directory,
  * concatenates and minifies into /js/site.min.js.
  *
- * Runs on gulp 'build-scripts', 'automate', and 'browser-sync'
+ * Runs on gulp 'build-scripts' and 'watch'
  *
  * @since 0.1.0
  */
@@ -45,6 +45,15 @@ gulp.task('build-scripts', function () {
         .pipe(browserSync.stream());
 });
 
+/**
+ * @summary Build Typekit.
+ *
+ * Builds the Typekit JS for serving Typekit fonts from localstorage.
+ *
+ * Runs on gulp 'build-typekit'
+ *
+ * @since 2.0.0
+ */
 gulp.task('build-typekit', function () {
     return streamqueue({objectMode: true},
         gulp.src('./node_modules/cnp-load-typekit-fonts/load-typekit-fonts.js'),
@@ -60,11 +69,11 @@ gulp.task('build-typekit', function () {
 /**
  * @summary Build Styles.
  *
- * Compiles the main SCSS file at /css/pre/styles.css. This
+ * Compiles the main SCSS file(s) at /ui/styles.css. This
  * file imports the Foundation styles and settings, so all
  * configuration and imports are run through this one file.
  *
- * Runs on gulp 'build-styles', 'automate', and 'browser-sync'
+ * Runs on gulp 'build-styles' and 'watch'
  *
  * @since 0.1.0
  */
@@ -97,7 +106,7 @@ gulp.task('build-styles', function () {
  * Watches for changes in the theme CSS & JS directories,
  * and compiles styles and scripts based on what changed.
  *
- * Runs on gulp 'automate' and 'browser-sync'
+ * Runs on gulp 'watch'
  *
  * @since 0.1.0
  *
