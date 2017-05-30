@@ -18,6 +18,7 @@ get_template_part( 'ui/head/head' );
 <?php
 do_action( 'cnp_before_webpage_div' );
 ?>
+<a href="#content" class="show-for-sr">Skip to Content</a>
 <div <?php CNP\Utility::echo_classes( [ 'webpage' ], 'cnp_webpage_div' ); ?>>
 	<div class="row">
 		<div class="column">
@@ -34,7 +35,7 @@ do_action( 'cnp_before_webpage_div' );
 					<?php
 					do_action( 'cnp_before_content_div' );
 					?>
-					<div <?php CNP\Utility::echo_classes( [ 'content' ], 'cnp_content_div' ); ?>><?php
+					<div id="content" <?php CNP\Utility::echo_classes( [ 'content' ], 'cnp_content_div' ); ?>><?php
 						include_once( CNP\template_path() );
 						?></div><!-- /.content -->
 					<?php
