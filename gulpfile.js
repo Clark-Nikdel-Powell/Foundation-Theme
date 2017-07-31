@@ -15,7 +15,6 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
 var combineMq = require('gulp-combine-mq');
 
 /*——————————————————————————————————————————————————————————
@@ -39,27 +38,6 @@ gulp.task('build-scripts', function () {
         gulp.src('./ui/_required/js/class-switcher.js')
     )
         .pipe(concat('site.min.js'))
-        .pipe(gulp.dest('./assets/js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./assets/js'))
-        .pipe(browserSync.stream());
-});
-
-/**
- * @summary Build Typekit.
- *
- * Builds the Typekit JS for serving Typekit fonts from localstorage.
- *
- * Runs on gulp 'build-typekit'
- *
- * @since 2.0.0
- */
-gulp.task('build-typekit', function () {
-    return streamqueue({objectMode: true},
-        gulp.src('./node_modules/cnp-load-typekit-fonts/load-typekit-fonts.js'),
-        gulp.src('./ui/_required/js/typekit.js')
-    )
-        .pipe(concat('typekit.min.js'))
         .pipe(gulp.dest('./assets/js'))
         .pipe(uglify())
         .pipe(gulp.dest('./assets/js'))
