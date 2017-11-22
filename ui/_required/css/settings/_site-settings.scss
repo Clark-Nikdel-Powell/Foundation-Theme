@@ -119,6 +119,7 @@ $body-color: #555;
 $site-width: 1440px;
 $content-width: 1000px;
 
+$base-font-family: $f-default;
 $body-font-family: $f-default;
 $body-font-color: $body-color;
 
@@ -137,6 +138,16 @@ $cnp-medium-grid-row-margin: $grid-unit * 4;
 $site-margin-map: (
 	small only: $cnp-small-grid-row-margin,
 	medium only: $cnp-medium-grid-row-margin,
+);
+
+// I set this up on Brooks somewhere, not sure what I used these for though.
+$site-margin-values: map-values($site-margin-map);
+$last-site-margin-value: nth($site-margin-values, length($site-margin-values));
+
+$site-width-map: (
+	$content-width: calc((100vw - (#{$content-width} - #{$last-site-margin-value * 2})) / -2),
+	$content-width + ($last-site-margin-value * 2): calc((100vw - #{$content-width}) / -2),
+	$site-width: ($site-width - $content-width) / -2,
 );
 
 /*——————————————————————————————————————————————————————————
@@ -180,4 +191,39 @@ $grid-column-gutter: (
 	small: $small-grid-column-gutter,
 	medium: $medium-grid-column-gutter,
 	xlarge: $xlarge-grid-column-gutter,
+);
+
+//——————————————————————————————————————————————————————————————————————————————
+//  4. Base Typography
+//——————————————————————————————————————————————————————————————————————————————
+
+//——————————————————————————————————————————————————————————
+//  Foundation
+//——————————————————————————————————————————————————————————
+
+$header-styles: (
+	small: (
+		'h1': ('font-size': 32),
+		'h2': ('font-size': 22),
+		'h3': ('font-size': 20),
+		'h4': ('font-size': 18),
+		'h5': ('font-size': 17),
+		'h6': ('font-size': 16),
+	),
+	medium: (
+		'h1': ('font-size': 48),
+		'h2': ('font-size': 26),
+		'h3': ('font-size': 24),
+		'h4': ('font-size': 22),
+		'h5': ('font-size': 17),
+		'h6': ('font-size': 16),
+	),
+	large: (
+		'h1': ('font-size': 72),
+		'h2': ('font-size': 36),
+		'h3': ('font-size': 30),
+		'h4': ('font-size': 24),
+		'h5': ('font-size': 20),
+		'h6': ('font-size': 16),
+	),
 );

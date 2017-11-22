@@ -20,8 +20,8 @@ do_action( 'cnp_before_webpage_div' );
 ?>
 <a href="#content" class="show-for-sr">Skip to Content</a>
 <div <?php CNP\Utility::echo_classes( [ 'webpage' ], 'cnp_webpage_div' ); ?>>
-	<div class="row">
-		<div class="column">
+	<div class="webpage-row">
+		<div class="webpage-column">
 			<?php
 			get_header();
 

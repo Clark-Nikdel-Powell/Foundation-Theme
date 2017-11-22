@@ -1,0 +1,174 @@
+//——————————————————————————————————————————————————————————————————————————————
+//  Typography
+//——————————————————————————————————————————————————————————————————————————————
+
+/*——————————————————————————————————————————————————————————————————————————————
+/  HEADER STYLES
+——————————————————————————————————————————————————————————————————————————————*/
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+@mixin typographic-item( $settings:() ) {
+	$defaults: (
+		'include_properties': true,
+	);
+	$args: map_merge($defaults, $settings);
+
+	$font: map_get($args, font);
+	$tag: map_get($args, tag);
+	$weight: map_get($args, weight);
+	$color: map_get($args, color);
+
+	@if '' != $weight {
+		font-weight: $weight;
+	}
+	@if '' != $color {
+		color: $color;
+	}
+
+	@if $font != $body-font-family {
+		font-family: $font;
+	}
+
+	// Heading styles
+	@if map_get($args, 'include_properties') == true {
+		@each $size, $headers in $header-styles {
+			@include breakpoint($size) {
+
+				@each $item-tag, $properties in $headers {
+
+					@if $item-tag == $tag {
+						@each $property, $value in $properties {
+							#{$property}: $value;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin h1( $settings:() ) {
+	$defaults: (
+		'tag': h1,
+		'font': $trim-bold,
+		'weight': normal,
+		'color': $purple,
+	);
+	$args: map_merge($defaults, $settings);
+
+	text-transform: uppercase;
+
+	@include typographic-item($args);
+}
+
+@mixin h2( $settings:() ) {
+	$defaults: (
+		'tag': h2,
+		'font': $trim-regular,
+		'weight': normal,
+		'color': $purple,
+	);
+	$args: map_merge($defaults, $settings);
+
+	text-transform: uppercase;
+
+	@include typographic-item($args);
+}
+
+@mixin h3( $settings:() ) {
+	$defaults: (
+		'tag': h3,
+		'font': $decima-mono,
+		'weight': normal,
+		'color': $electric-blue,
+	);
+	$args: map_merge($defaults, $settings);
+
+	text-transform: uppercase;
+
+	@include typographic-item($args);
+}
+
+@mixin p( $settings:() ) {
+	$defaults: (
+		'tag': p,
+		'font': $trim-light,
+	);
+
+	$args: map_merge($defaults, $settings);
+
+	@include typographic-item($args);
+}
+
+@mixin h4( $settings:() ) {
+	$defaults: (
+		'tag': h4,
+		'font': $decima-mono,
+		'weight': normal,
+		'color': $purple,
+	);
+
+	$args: map_merge($defaults, $settings);
+
+	@include typographic-item($args);
+}
+
+@mixin intro( $settings:() ) {
+	$defaults: (
+		'tag': intro,
+		'font': $trim-regular,
+		'weight': normal,
+		'color': $mint,
+	);
+
+	$args: map_merge($defaults, $settings);
+
+	@include typographic-item($args);
+}
+
+@mixin btn( $settings:() ) {
+	$defaults: (
+		'tag': btn,
+		'background': $mint,
+		'background-hover': darken(saturate($mint, 10%), 15%),
+		'color': #fff,
+		'color-hover': #fff,
+		'font': $decima-mono,
+	);
+
+	$args: map_merge($defaults, $settings);
+
+	@include scut-vcenter-ib();
+	background: map_get($args, 'background');
+	display: inline-block;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:hover {
+		background: map_get($args, 'background-hover');
+		color: map_get($args, 'color-hover');
+	}
+
+	@include typographic-item($args);
+}
+
+h1,
+.h1 {
+	@include h1();
+}
+
+h2,
+.h2 {
+	@include h2();
+}
+
+h3,
+.h3 {
+	@include h3();
+}
