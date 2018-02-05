@@ -19,7 +19,7 @@ class LayoutDefault {
 	 */
 	public static function init() {
 
-		add_action( 'wp_head', function () {
+		add_action( 'wp', function () {
 			self::hook_wordpress();
 		} );
 	}
