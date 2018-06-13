@@ -20,7 +20,7 @@
   "devDependencies": {
     "foundation-sites": "6.4.4-rc1",
     "slick-carousel": "1.8.1",
-    "cnp-scss-snippets": "2.1.0",
+    "cnp-scss-snippets": "2.2.0",
     "scut": "1.4.0",
     "gulp": "*",
     "browser-sync": "*",
